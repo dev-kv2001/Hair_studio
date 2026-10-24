@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "skills": {
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "65049e1890f5fedf8f8e1144848f07bcda788e51c22bac78afbd073aeb486725"
+    },
+    "editorial": {
+      "source": "bergside/awesome-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/editorial/SKILL.md",
+      "computedHash": "17b3eb04bceb366b2e1032da6c1cc6a9fa47aee655ed010b30931720c63a6a31"
+    },
+    "find-docs": {
+      "source": "upstash/context7",
+      "sourceType": "github",
+      "skillPath": "skills/find-docs/SKILL.md",
+      "computedHash": "11f349468e52054dcaa87ccdb03d82112a4f00e61134de5fb70b26c1e291cc82"
+    },
+    "image-to-code": {
+      "source": "tasteskill/tasteskill",
+      "sourceType": "github",
+      "skillPath": "image-to-code/SKILL.md",
+      "computedHash": "94eab8f40dc11b6b522808a3b6b2b4931efd6c5b73a724861ea17038b3054383"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "8ffc82e46758e5c90d08f69f409623b95342eec3cb77a1523281db5bf158b864"
+    },
+    "premium": {
+      "source": "bergside/awesome-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/premium/SKILL.md",
+      "computedHash": "8833c597e5524ee238572c7c74458a7c83c550166aaeea82dbd0d8f2f8f40f36"
+    },
+    "refined": {
+      "source": "bergside/awesome-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/refined/SKILL.md",
+      "computedHash": "0cb02ca4e25d7b8994b72c14b1410b8b8e952ce758f8c2bcbdd44b576495e0d2"
+    },
+    "spacious": {
+      "source": "bergside/awesome-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/spacious/SKILL.md",
+      "computedHash": "e83e24970f9d8ee10b7763a755e3ef854db80140fdee14f1ff642ae11e04e9e4"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474"
+    }
+  }
+}

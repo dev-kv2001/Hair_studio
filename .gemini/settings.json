@@ -1,0 +1,43 @@
+{
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp"
+    }
+  },
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "^run_shell_command$",
+        "hooks": [
+          {
+            "name": "impeccable-session",
+            "type": "command",
+            "command": "if (Test-Path -LiteralPath \"$env:GEMINI_PROJECT_DIR/.gemini/skills/impeccable/scripts/impeccable.cmd\") { & \"$env:GEMINI_PROJECT_DIR/.gemini/skills/impeccable/scripts/impeccable.cmd\" hook }",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "read_file|list_directory",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "graphify hook-guard gemini"
+          }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "hooks": [
+          {
+            "name": "impeccable-completion",
+            "type": "command",
+            "command": "if (Test-Path -LiteralPath \"$env:GEMINI_PROJECT_DIR/.gemini/skills/impeccable/scripts/impeccable.cmd\") { & \"$env:GEMINI_PROJECT_DIR/.gemini/skills/impeccable/scripts/impeccable.cmd\" hook }",
+            "timeout": 30000
+          }
+        ]
+      }
+    ]
+  }
+}

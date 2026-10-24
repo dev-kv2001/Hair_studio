@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ivory: #f6f3ee;
+  --color-cream: #ece6dd;
+  --color-oat: #dcd2c4;
+  --color-taupe: #6b5d51;
+  --color-ash: #b3a596;
+  --color-charcoal: #1f1b18;
+  --color-moss: #3c4437;
+  --color-moss-ink: #ece6d8;
+
+  --text-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
+  --text-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --text-lead: clamp(1.375rem, 1.15rem + 0.8vw, 1.875rem);
+  --text-head: clamp(2.25rem, 1.4rem + 3.4vw, 4.5rem);
+  --text-display: clamp(3rem, 0.5rem + 6.6vw, 7.5rem);
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-bodoni);
+  --font-sans: var(--font-hanken);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility frame {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 4.5rem);
+}
+
+@layer base {
+  html {
+    background: var(--color-ivory);
+    color: var(--color-charcoal);
+    color-scheme: light;
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: rgb(31 27 24 / 0.08);
+  }
+
+  a,
+  button,
+  summary,
+  select,
+  input {
+    touch-action: manipulation;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-charcoal);
+    color: var(--color-ivory);
+  }
+
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  input,
+  select,
+  textarea {
+    caret-color: currentColor;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+
+  html {
+    scrollbar-color: var(--color-ash) var(--color-ivory);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Entrance motion: content is visible by default and only hidden once JS is ready to reveal it. */
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+}
+
+[data-reveal="shown"] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.9s var(--ease-out-quint),
+    transform 0.9s var(--ease-out-quint);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.slow-zoom {
+  animation: slow-zoom 2.4s var(--ease-out-quint) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .slow-zoom {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
 }
