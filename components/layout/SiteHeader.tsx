@@ -68,7 +68,7 @@ export function SiteHeader() {
                 <a
                   href={link.href}
                   aria-current={current === link.href ? "location" : undefined}
-                  className="relative inline-flex min-h-11 items-center text-small after:absolute after:inset-x-0 after:bottom-2 after:h-0.5 after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out-quint hover:after:origin-left hover:after:scale-x-100 aria-[current=location]:text-rose aria-[current=location]:after:origin-left aria-[current=location]:after:scale-x-100"
+                  className="relative inline-flex min-h-11 items-center text-small after:absolute after:inset-x-0 after:bottom-2 after:h-0.5 after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out-quint hover:after:origin-left hover:after:scale-x-100 aria-[current=location]:text-rose-deep aria-[current=location]:after:origin-left aria-[current=location]:after:scale-x-100"
                 >
                   {link.label}
                 </a>
@@ -112,7 +112,7 @@ export function SiteHeader() {
                 <a
                   href={link.href}
                   aria-current={current === link.href ? "location" : undefined}
-                  className="flex items-baseline justify-between py-1.5 text-[2.75rem] leading-[1.05] font-medium tracking-[-0.03em] aria-[current=location]:text-rose"
+                  className="flex items-baseline justify-between py-1.5 text-[2.75rem] leading-[1.05] font-medium tracking-[-0.03em] aria-[current=location]:text-rose-deep"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}

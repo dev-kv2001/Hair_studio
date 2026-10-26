@@ -11,10 +11,12 @@ const subscribeNever = () => () => {};
 const getYear = () => String(new Date().getFullYear());
 const getYearServer = () => "2026";
 
+const footerLabel = "block text-small text-paper-soft";
+
 /**
- * Single-file component for the dark ash/charcoal footer.
- * Features oversized display brand typography, architectural 4-column navigation,
- * clean credits disclosure, and client-side smooth back-to-top interaction.
+ * The obsidian close: the studio in a line with a way back up, a four-part directory (studio, pages,
+ * social, hours), the name margin to margin, and the legal line. Labels are sentence case in muted taupe;
+ * everything a visitor reads or clicks is set at body size in full ivory.
  */
 export function SiteFooter() {
   const currentYear = useSyncExternalStore(subscribeNever, getYear, getYearServer);
@@ -24,21 +26,17 @@ export function SiteFooter() {
   };
 
   return (
-    <footer className="relative overflow-clip bg-charcoal text-paper">
-      {/* Subtle Ambient Decorative Glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[400px] w-[800px] rounded-full bg-ash/30 blur-3xl"
-      />
-
-      <div className="frame relative z-10 flex min-h-[90svh] flex-col justify-between pt-16 pb-[max(2rem,env(safe-area-inset-bottom))] lg:pt-24">
-        {/* Top Section: Quick Summary & Back-to-Top Button */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 pb-12">
+    <footer className="overflow-clip bg-charcoal text-paper">
+      <div className="frame flex min-h-[90svh] flex-col justify-between gap-16 pt-20 pb-[max(2rem,env(safe-area-inset-bottom))] lg:gap-20 lg:pt-28">
+        {/* The studio in one line, and the way back up. */}
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-lead font-medium text-paper tracking-tight">
-              {site.name} <span className="text-paper-soft font-normal">· {site.descriptor}</span>
+            <p className="text-lead leading-[1.15] font-medium tracking-[-0.02em]">
+              {site.name}
+              {/* En spaces: Erode's middle dot sits tight against the following letter with a normal space. */}
+              <span className="font-normal text-paper-soft">&ensp;·&ensp;{site.descriptor}</span>
             </p>
-            <p className="mt-1 text-small text-paper-soft max-w-[42ch]">
+            <p className="mt-3 max-w-[42ch] text-paper-soft">
               A quiet studio for unhurried precision cutting, bespoke balayage, and natural textural care.
             </p>
           </div>
@@ -46,7 +44,7 @@ export function SiteFooter() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="group inline-flex items-center gap-3 bg-paper/10 px-5 py-3 text-small font-medium text-paper transition-[background-color,transform] duration-200 hover:bg-rose active:scale-95 cursor-pointer self-start sm:self-auto"
+            className="group inline-flex min-h-13 shrink-0 cursor-pointer items-center gap-3 self-start bg-paper/10 px-6 text-small font-medium text-paper transition-[background-color,transform] duration-200 hover:bg-rose-deep active:scale-95 sm:self-auto"
             aria-label="Back to top of page"
           >
             <span>Back to top</span>
@@ -56,33 +54,25 @@ export function SiteFooter() {
           </button>
         </div>
 
-        {/* Middle Navigation & Directory Grid */}
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 text-small sm:text-body lg:grid-cols-4 py-8">
-          {/* Col 1: Studio Location */}
-          <div className="space-y-2">
-            <span className="block text-small uppercase tracking-wider text-paper/50">
-              Studio
-            </span>
-            <p className="font-medium text-paper">{site.address.street}</p>
+        {/* The directory: studio and hours run full width on phones, with pages and social side by side between. */}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-12">
+          <div className="col-span-2 lg:col-span-4">
+            <span className={footerLabel}>Studio</span>
+            <p className="mt-4">{site.address.street}</p>
             <p className="text-paper-soft">
               {site.address.city}, {site.address.postcode}
             </p>
-            <p className="pt-2">
+            <p className="mt-4">
               <a href={`mailto:${site.email}`} className={footerLink}>
                 {site.email}
               </a>
             </p>
-            <p className="text-small text-paper-soft pt-1">
-              Call desk: {site.phone.display}
-            </p>
+            <p className="mt-1 text-paper-soft">Call desk: {site.phone.display}</p>
           </div>
 
-          {/* Col 2: Navigation Links */}
-          <nav aria-label="Footer Navigation">
-            <span className="block text-small uppercase tracking-wider text-paper/50 mb-2">
-              Navigation
-            </span>
-            <ul className="flex flex-col gap-2">
+          <nav aria-label="Footer Navigation" className="lg:col-span-2">
+            <span className={footerLabel}>Navigation</span>
+            <ul className="mt-4 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className={footerLink}>
@@ -93,60 +83,45 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          {/* Col 3: Social Archives */}
-          <div>
-            <span className="block text-small uppercase tracking-wider text-paper/50 mb-2">
-              Connect
-            </span>
-            <ul className="flex flex-col gap-2" aria-label="Social channels">
+          <div className="lg:col-span-2">
+            <span className={footerLabel}>Connect</span>
+            <ul className="mt-4 flex flex-col gap-2" aria-label="Social channels">
               {socialLinks.map((social) => (
                 <li key={social.label}>
-                  <a
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={footerLink}
-                  >
+                  <a href={social.href} className={footerLink}>
                     <span>{social.label}</span>
-                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 4: Studio Schedule */}
-          <div>
-            <span className="block text-small uppercase tracking-wider text-paper/50 mb-2">
-              Hours
-            </span>
-            <dl className="grid grid-cols-[auto_auto] justify-start gap-x-5 gap-y-1.5 text-small">
+          <div className="col-span-2 lg:col-span-4">
+            <span className={footerLabel}>Hours</span>
+            <dl className="mt-4 grid max-w-[26rem] grid-cols-[1fr_auto] gap-x-6 gap-y-2">
               {openingHours.map((row) => (
                 <div key={row.days} className="contents">
-                  <dt className="text-paper">{row.days}</dt>
-                  <dd className="text-paper-soft text-right">{row.hours}</dd>
+                  <dt>{row.days}</dt>
+                  <dd className="text-right text-paper-soft tabular-nums">{row.hours}</dd>
                 </div>
               ))}
             </dl>
           </div>
         </div>
 
-        {/* Giant Monolithic Masthead Typography */}
-        <div className="pt-8">
+        {/* The name returns margin to margin (sized from its measured width, as in the hero), then the legal line. */}
+        <div>
           <p
             aria-hidden="true"
             translate="no"
-            className="scroll-rise -ml-[0.04em] pb-[0.08em] text-[18.2vw] leading-[0.78] font-medium tracking-[-0.055em] text-paper/95 whitespace-nowrap select-none 2xl:text-[16.5rem]"
+            className="scroll-rise -ml-[0.045em] pb-[0.08em] text-[min(14.7vw,13.2rem)] leading-[0.78] font-medium tracking-[-0.055em] whitespace-nowrap text-paper/95 select-none"
           >
             {site.name}
           </p>
 
-          {/* Bottom Legal, Year & Photo Credits Drawer */}
-          <div className="mt-8 flex flex-col gap-4 text-small text-paper-soft sm:flex-row sm:items-center sm:justify-between pt-6">
-            <p>
-              © {currentYear} {site.name} {site.descriptor}. Fictional studio craft demonstration.
-            </p>
-          </div>
+          <p className="mt-10 text-small text-paper-soft">
+            © {currentYear} {site.name} {site.descriptor}. Fictional studio craft demonstration.
+          </p>
         </div>
       </div>
     </footer>

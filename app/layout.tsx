@@ -1,14 +1,15 @@
 import type { Metadata, Viewport } from "next";
+import { site } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ivory & Ash Hair Studio (demo)",
+  title: `${site.name} ${site.descriptor} (demo)`,
   description:
     "A demo landing page for a fictional hair studio: cuts, colour, treatments, bridal styling, hair spa and blowouts. All business details are sample content.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f5efec",
+  themeColor: "#f6f0e8",
   colorScheme: "light",
 };
 

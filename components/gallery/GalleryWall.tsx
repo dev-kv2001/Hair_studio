@@ -6,6 +6,7 @@ import { Lightbox } from "@/components/gallery/Lightbox";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { galleryCategories } from "@/data/gallery";
+import { site } from "@/data/site";
 import type { GalleryCategory, GalleryItem } from "@/types/content";
 
 type Filter = GalleryCategory | "All";
@@ -111,6 +112,10 @@ export function GalleryWall({ items }: { items: GalleryItem[] }) {
         {visible.map((item, position) => {
           const layout = editorialLayout[position % editorialLayout.length];
           const isHovered = hoveredId === item.id;
+          const openLightbox = (event: React.MouseEvent<HTMLButtonElement>) => {
+            openerRef.current = event.currentTarget;
+            setOpenIndex(position);
+          };
 
           const card = (
             <figure
@@ -121,10 +126,7 @@ export function GalleryWall({ items }: { items: GalleryItem[] }) {
               <button
                 type="button"
                 className="relative block w-full overflow-clip bg-oat cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
-                onClick={(event) => {
-                  openerRef.current = event.currentTarget;
-                  setOpenIndex(position);
-                }}
+                onClick={openLightbox}
                 aria-label={`Open detailed view for ${item.title}`}
               >
                 <div className={`relative w-full ${layout.aspect} overflow-clip`}>
@@ -163,7 +165,7 @@ export function GalleryWall({ items }: { items: GalleryItem[] }) {
                   <span className="text-body font-medium text-ink tracking-tight">
                     {item.title}
                   </span>
-                  <span className="text-small font-medium text-rose uppercase tracking-wider">
+                  <span className="text-small font-medium text-rose-deep uppercase tracking-wider">
                     {item.category}
                   </span>
                 </div>
@@ -175,10 +177,14 @@ export function GalleryWall({ items }: { items: GalleryItem[] }) {
                 )}
 
                 <div className="mt-1 flex items-center justify-between text-small text-ink-soft pt-2">
-                  <span>{item.duration ? `Duration: ${item.duration}` : "Ivory & Ash Craft"}</span>
-                  <span className="underline decoration-ink/20 underline-offset-4 group-hover:text-ink transition-colors">
+                  <span>{item.duration ? `Duration: ${item.duration}` : `${site.name} Craft`}</span>
+                  <button
+                    type="button"
+                    onClick={openLightbox}
+                    className="underline decoration-ink/20 underline-offset-4 group-hover:text-ink transition-colors"
+                  >
                     Inspect photo →
-                  </span>
+                  </button>
                 </div>
               </figcaption>
             </figure>

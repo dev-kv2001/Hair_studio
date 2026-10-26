@@ -53,11 +53,13 @@ export function Services() {
   return (
     <section id="services" aria-labelledby="services-title" className="bg-oat lg:py-0">
       <div className="frame lg:grid lg:grid-cols-12 lg:gap-x-8">
-        {/* The ash field bleeds to the page's left edge and runs the full height of the section. */}
-        <div className="sticky top-[4.5rem] z-10 -mx-[clamp(1rem,4vw,4rem)] bg-ash lg:static lg:col-span-5 lg:mx-0 lg:-ml-[clamp(1rem,4vw,4rem)]">
+        {/* The ash field bleeds to the page's left edge and runs the full height of the section; past the frame's
+            max width, its ::before carries the field on to the edge of the screen. */}
+        <div className="sticky top-[4.5rem] z-10 -mx-[clamp(1rem,4vw,4rem)] bg-ash lg:relative lg:top-0 lg:col-span-5 lg:mx-0 lg:-ml-[clamp(1rem,4vw,4rem)] lg:before:absolute lg:before:inset-y-0 lg:before:right-full lg:before:w-[50vw] lg:before:bg-ash">
           <div className="lg:sticky lg:top-[calc(4.5rem+6vh)] lg:px-[clamp(1.25rem,3vw,3rem)] lg:py-[6vh]">
-            <figure>
-              <div className="relative h-[38svh] overflow-clip bg-taupe lg:aspect-[4/5] lg:h-auto lg:max-h-[68svh] lg:w-full">
+            {/* Capping the width, not the height, keeps the photograph at 4:5 on short screens. */}
+            <figure className="lg:mx-auto lg:max-w-[calc(68svh*4/5)]">
+              <div className="relative h-[38svh] overflow-clip bg-taupe lg:aspect-[4/5] lg:h-auto lg:w-full">
                 {services.map((service, index) => {
                   const isActive = index === active;
                   return (
@@ -67,7 +69,7 @@ export function Services() {
                       alt={service.photo.alt}
                       fill
                       placeholder="blur"
-                      sizes="(min-width: 64rem) 38vw, 100vw"
+                      sizes="(min-width: 90rem) 31rem, (min-width: 64rem) 35vw, 100vw"
                       aria-hidden={!isActive}
                       className={`object-cover transition-[opacity,scale] ease-out-quint ${
                         isActive ? "scale-100 opacity-100 duration-[1200ms]" : "scale-[1.08] opacity-0 duration-700"
@@ -150,7 +152,7 @@ export function Services() {
                       </p>
                       <BookButton
                         serviceId={service.id}
-                        className="group/book inline-flex min-h-11 items-center gap-2 text-small font-medium underline decoration-ink-soft/50 underline-offset-[0.35em] transition-colors hover:text-rose hover:decoration-rose"
+                        className="group/book ml-auto inline-flex min-h-11 items-center gap-2 text-small font-medium underline decoration-ink-soft/50 underline-offset-[0.35em] transition-colors hover:text-rose-deep hover:decoration-rose-deep"
                       >
                         Book {service.name.toLowerCase()}
                         <Icon name="arrowRight" className="size-4 transition-transform duration-300 ease-out-quint group-hover/book:translate-x-1" />

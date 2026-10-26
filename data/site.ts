@@ -2,7 +2,7 @@ import type { NavLink, OpeningHours } from "@/types/content";
 
 // Every business detail below is a placeholder for this demo site.
 export const site = {
-  name: "Ivory & Ash",
+  name: "Copper & Crown",
   descriptor: "Hair Studio",
   address: {
     street: "12 Example Street",
@@ -31,9 +31,9 @@ export const openingHours: OpeningHours[] = [
 ];
 
 export const socialLinks = [
-  { label: "Instagram", href: "#" },
-  { label: "Pinterest", href: "#" },
-  { label: "TikTok", href: "#" },
+  { label: "Instagram", href: "#home" },
+  { label: "Pinterest", href: "#home" },
+  { label: "TikTok", href: "#home" },
 ];
 
 const fullAddress = `${site.address.street}, ${site.address.city} ${site.address.postcode}`;

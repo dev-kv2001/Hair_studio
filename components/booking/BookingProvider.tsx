@@ -18,9 +18,10 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
 
   const requestBooking = useCallback((id?: ServiceId) => {
     if (id) setServiceId(id);
-    document.getElementById(BOOKING_SECTION_ID)?.scrollIntoView({ block: "start" });
+    const field = document.getElementById(BOOKING_FIRST_FIELD_ID);
+    field?.scrollIntoView({ block: "center" });
     // Focus without a second jump; the smooth scroll above carries the viewport.
-    document.getElementById(BOOKING_FIRST_FIELD_ID)?.focus({ preventScroll: true });
+    field?.focus({ preventScroll: true });
     history.replaceState(null, "", `#${BOOKING_SECTION_ID}`);
   }, []);
 

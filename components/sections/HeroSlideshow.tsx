@@ -29,19 +29,16 @@ function subscribeToMotionPreference(onChange: () => void) {
 
 /**
  * The hero's living background: the photographs crossfade edge to edge, each on a slow zoom and drift,
- * under a warm ash wash. One control pauses all of it (and it starts paused under reduced motion);
- * the progress lines also jump straight to a slide. The hero's own content is passed in as children.
+ * under a warm ash wash. It stays paused under reduced motion; the progress lines jump straight to a slide. The hero's own content is passed in as children.
  */
 export function HeroSlideshow({ slides, children }: { slides: Slide[]; children: React.ReactNode }) {
   const [index, setIndex] = useState(0);
-  const prefersReducedMotion = useSyncExternalStore(
+  // Reduced motion means "paused".
+  const paused = useSyncExternalStore(
     subscribeToMotionPreference,
     () => window.matchMedia(REDUCED_MOTION).matches,
     () => true,
   );
-  // The visitor's own choice wins; until they make one, reduced motion means "paused".
-  const [userPaused, setUserPaused] = useState<boolean | null>(null);
-  const paused = userPaused ?? prefersReducedMotion;
 
   const single = slides.length < 2;
 
@@ -86,32 +83,25 @@ export function HeroSlideshow({ slides, children }: { slides: Slide[]; children:
         <div aria-hidden="true" className="absolute inset-0 bg-ash/40 mix-blend-multiply" />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgb(31_27_25/0.66)_0%,rgb(31_27_25/0.2)_32%,rgb(31_27_25/0.34)_56%,rgb(31_27_25/0.86)_100%)]" /* taste-skill-ignore: neutral scrim over a photograph */
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgb(23_23_23/0.66)_0%,rgb(23_23_23/0.2)_32%,rgb(23_23_23/0.34)_56%,rgb(23_23_23/0.86)_100%)]" /* taste-skill-ignore: neutral scrim over a photograph */
         />
         {/* A second scrim from the right edge quiets the photograph behind the supporting text on wide screens. */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 hidden lg:block lg:bg-[linear-gradient(270deg,rgb(31_27_25/0.62)_0%,rgb(31_27_25/0.35)_30%,rgb(31_27_25/0)_55%)]" /* taste-skill-ignore: neutral scrim over a photograph */
+          className="absolute inset-0 hidden lg:block lg:bg-[linear-gradient(270deg,rgb(23_23_23/0.62)_0%,rgb(23_23_23/0.35)_30%,rgb(23_23_23/0)_55%)]" /* taste-skill-ignore: neutral scrim over a photograph */
         />
       </div>
 
       {children}
 
       <div className="hero-fade absolute top-6 right-[clamp(1rem,4vw,4rem)] z-10 flex w-[min(19rem,calc(100%-2rem))] flex-col gap-1 text-small text-paper sm:top-8">
-        <div className="flex items-baseline justify-between gap-4">
+        <div className="flex min-h-11 items-center justify-between gap-4">
           <span>
             <span className="sr-only">Showing: </span>
             <span key={slides[index].caption} className="photo-in inline-block">
               {slides[index].caption}
             </span>
           </span>
-          <button
-            type="button"
-            onClick={() => setUserPaused(!paused)}
-            className="min-h-11 shrink-0 underline decoration-paper/40 underline-offset-4 transition-colors hover:decoration-paper"
-          >
-            {paused ? "Play motion" : "Pause motion"}
-          </button>
         </div>
         {/* One line per photograph: the current one fills over its hold time, and each jumps to its slide. */}
         <div className={`flex gap-1.5 ${single ? "hidden" : ""}`} role="group" aria-label="Choose a slide">

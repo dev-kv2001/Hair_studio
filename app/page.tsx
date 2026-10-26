@@ -2,7 +2,6 @@ import { BookingProvider } from "@/components/booking/BookingProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { About } from "@/components/sections/About";
-import { Appointment } from "@/components/sections/Appointment";
 import { Contact } from "@/components/sections/Contact";
 import { Gallery } from "@/components/sections/Gallery";
 import { Hero } from "@/components/sections/Hero";
@@ -13,7 +12,7 @@ export default function Home() {
     <BookingProvider>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-rose focus:px-4 focus:py-3 focus:text-paper"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-rose-deep focus:px-4 focus:py-3 focus:text-paper"
       >
         Skip to content
       </a>
@@ -23,7 +22,6 @@ export default function Home() {
         <Services />
         <About />
         <Gallery />
-        <Appointment />
         <Contact />
       </main>
       <SiteFooter />

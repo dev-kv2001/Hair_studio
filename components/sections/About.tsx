@@ -152,7 +152,7 @@ export function About() {
             <div>
               <Reveal delay={90}>
                 <p className="text-lead leading-[1.35] text-ink font-normal text-wrap:pretty">
-                  Ivory &amp; Ash began as a deliberate reaction to the rushed salon assembly line. We built an intentional studio where nobody is hurried out of the chair, appointments never overlap, and every client receives ten uninterrupted minutes to speak about their hair before water touches the basin.
+                  {site.name} began as a deliberate reaction to the rushed salon assembly line. We built an intentional studio where nobody is hurried out of the chair, appointments never overlap, and every client receives ten uninterrupted minutes to speak about their hair before water touches the basin.
                 </p>
               </Reveal>
 
@@ -228,7 +228,7 @@ export function About() {
                         <span className="text-lead font-medium">{member.name}</span>
                         <span className="text-small text-ink-soft">{member.experience}</span>
                       </div>
-                      <p className="mt-1 text-small font-medium text-rose">{member.role}</p>
+                      <p className="mt-1 text-small font-medium text-rose-deep">{member.role}</p>
                       <p className="mt-3 text-small leading-relaxed text-ink-soft">
                         {member.bio}
                       </p>

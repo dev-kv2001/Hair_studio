@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { BookingForm } from "@/components/booking/BookingForm";
+import { BOOKING_SECTION_ID } from "@/components/booking/constants";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { SampleNote } from "@/components/ui/SampleNote";
@@ -15,7 +16,7 @@ import { directionsHref, openingHours, site, socialLinks } from "@/data/site";
  */
 export function Contact() {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="relative overflow-clip bg-ivory py-24 lg:py-40">
+    <section id={BOOKING_SECTION_ID} aria-labelledby="contact-title" className="relative overflow-clip bg-ivory py-24 lg:py-40">
       {/* Subtle Ambient Parallax Texture Background */}
       <div
         aria-hidden="true"
@@ -69,7 +70,7 @@ export function Contact() {
                       Choose your service and preferred window. Our team coordinates timing directly with you.
                     </p>
                   </div>
-                  <span className="hidden sm:inline-block text-small uppercase tracking-wider text-rose font-medium">
+                  <span className="hidden sm:inline-block text-small uppercase tracking-wider text-rose-deep font-medium">
                     Online Desk
                   </span>
                 </div>
@@ -119,7 +120,7 @@ export function Contact() {
                           {site.address.city}, {site.address.postcode}
                         </p>
                       </div>
-                      <span className="inline-flex items-center gap-1.5 text-small font-medium text-rose group-hover:underline underline-offset-4">
+                      <span className="inline-flex items-center gap-1.5 text-small font-medium text-rose-deep group-hover:underline underline-offset-4">
                         Directions
                         <Icon name="external" className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </span>
@@ -132,7 +133,7 @@ export function Contact() {
                       className="group bg-blush/30 p-5 transition-[background-color,transform] duration-300 hover:bg-blush/60 hover:translate-x-0.5"
                     >
                       <span className="text-small text-ink-soft">Telephone</span>
-                      <p className="mt-1 text-body font-medium text-ink group-hover:text-rose transition-colors">
+                      <p className="mt-1 text-body font-medium text-ink group-hover:text-rose-deep transition-colors">
                         {site.phone.display}
                       </p>
                     </a>
@@ -142,7 +143,7 @@ export function Contact() {
                       className="group bg-blush/30 p-5 transition-[background-color,transform] duration-300 hover:bg-blush/60 hover:translate-x-0.5"
                     >
                       <span className="text-small text-ink-soft">Direct email</span>
-                      <p className="mt-1 text-body font-medium text-ink group-hover:text-rose transition-colors break-all">
+                      <p className="mt-1 text-body font-medium text-ink group-hover:text-rose-deep transition-colors break-all">
                         {site.email}
                       </p>
                     </a>
@@ -198,7 +199,7 @@ export function Contact() {
               </div>
               <figcaption className="bg-oat/50 p-4 flex items-center justify-between text-small text-ink-soft">
                 <span>One-on-one consultation before every appointment</span>
-                <span className="text-rose font-medium">Complimentary</span>
+                <span className="text-rose-deep font-medium">Complimentary</span>
               </figcaption>
             </Reveal>
           </div>

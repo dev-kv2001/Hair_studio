@@ -378,15 +378,15 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1792991979.169069,
-    "seen": 1792993789.978621,
-    "ast_hash": "da482f4cac710fd46395dae075a63640",
+    "mtime": 1793008888.167245,
+    "seen": 1793009489.9223266,
+    "ast_hash": "7403194e6903ba6a9f5f2b6b985cf12d",
     "semantic_hash": ""
   },
   "app/page.tsx": {
-    "mtime": 1792998681.3697512,
-    "seen": 1792998889.3578012,
-    "ast_hash": "49236cc127ef478f5b44290637b27660",
+    "mtime": 1793009797.9993966,
+    "seen": 1793011155.5563357,
+    "ast_hash": "0f77f1b2530e8231200299846aa4da83",
     "semantic_hash": ""
   },
   "eslint.config.mjs": {
@@ -1608,87 +1608,81 @@
     "semantic_hash": ""
   },
   "components/booking/BookingForm.tsx": {
-    "mtime": 1792999008.2884998,
-    "seen": 1792999344.7050707,
-    "ast_hash": "04fb5132482eae7a4be850df4e458148",
+    "mtime": 1793005642.710859,
+    "seen": 1793007792.3405843,
+    "ast_hash": "311d0503eb464caabf89507844b9fe7d",
     "semantic_hash": ""
   },
   "components/booking/BookingProvider.tsx": {
-    "mtime": 1792744802.7535753,
-    "seen": 1792746555.4062908,
-    "ast_hash": "7bfdde25fba0f2056d8e7435668d1d2b",
+    "mtime": 1793009793.9267519,
+    "seen": 1793011155.5566628,
+    "ast_hash": "b4e7ae704f70998dfcade3d18973709f",
     "semantic_hash": ""
   },
   "components/booking/constants.ts": {
-    "mtime": 1792744801.6391382,
-    "seen": 1792746555.406292,
-    "ast_hash": "0dafe821b61e07e7962fba0ff209f758",
+    "mtime": 1793009792.9035685,
+    "seen": 1793011155.5566654,
+    "ast_hash": "9b0ae059d5535396593362acc9e0036c",
     "semantic_hash": ""
   },
   "components/gallery/GalleryWall.tsx": {
-    "mtime": 1792998476.0810792,
-    "seen": 1792998671.0258338,
-    "ast_hash": "83815fa0c19edaf522e88129e702a8a6",
+    "mtime": 1793011416.25563,
+    "seen": 1793011992.1209126,
+    "ast_hash": "b9924a1fa6be74f7df0e6c3b96a19b25",
     "semantic_hash": ""
   },
   "components/gallery/Lightbox.tsx": {
-    "mtime": 1792998467.654344,
-    "seen": 1792998671.0258365,
-    "ast_hash": "89ef5060efefcf7bff36ff11baac7784",
+    "mtime": 1793008899.760494,
+    "seen": 1793009489.9229465,
+    "ast_hash": "8211034360e396cfcea0d2bfd9a7c70e",
     "semantic_hash": ""
   },
   "components/layout/SiteFooter.tsx": {
-    "mtime": 1792999661.879551,
-    "seen": 1792999838.5400338,
-    "ast_hash": "040c2e802315d4b68c1151bba88597cc",
+    "mtime": 1793012401.920427,
+    "seen": 1793012896.7870111,
+    "ast_hash": "49b7bc558f7c77b8c4ef64aa54c6bbc8",
     "semantic_hash": ""
   },
   "components/layout/SiteHeader.tsx": {
-    "mtime": 1792992036.9392266,
-    "seen": 1792993789.9790423,
-    "ast_hash": "c9bda6febecf82f454efa1461068cbad",
+    "mtime": 1793007373.8306901,
+    "seen": 1793007792.340861,
+    "ast_hash": "0ad4029486beaf702604ac81ec953920",
     "semantic_hash": ""
   },
   "components/sections/About.tsx": {
-    "mtime": 1792998016.23602,
-    "seen": 1792998178.3986425,
-    "ast_hash": "d4e20afd19f677e71efa65b699fb884e",
-    "semantic_hash": ""
-  },
-  "components/sections/Appointment.tsx": {
-    "mtime": 1792992282.8825102,
-    "seen": 1792993789.9790456,
-    "ast_hash": "8790dde0f106640a62b3ad1d18d28f80",
+    "mtime": 1793008889.094359,
+    "seen": 1793009489.9230762,
+    "ast_hash": "c787b3e995171831c6e05f70daa870d2",
     "semantic_hash": ""
   },
   "components/sections/Contact.tsx": {
-    "mtime": 1792999054.7944808,
-    "seen": 1792999344.7060606,
-    "ast_hash": "f71083da4d213a82d1bb14071b171f99",
+    "mtime": 1793009795.7690632,
+    "seen": 1793011155.5574498,
+    "ast_hash": "a9c8bed880d11a72676a279299505df4",
     "semantic_hash": ""
   },
   "components/sections/Gallery.tsx": {
-    "mtime": 1792998503.4891682,
-    "seen": 1792998671.0264761,
-    "ast_hash": "04692ae549598ce55cba9721e60da4a8",
+    "mtime": 1793005642.7158606,
+    "seen": 1793007792.3408682,
+    "ast_hash": "36846dc818c939f04145f6fc15219092",
     "semantic_hash": ""
   },
   "components/sections/Hero.tsx": {
-    "mtime": 1792994677.01602,
-    "seen": 1792995441.0918126,
-    "ast_hash": "c996724cf0f1e9a88b925a11770e3bbf",
+    "mtime": 1793010707.2255669,
+    "seen": 1793011155.557631,
+    "ast_hash": "341a0f6bbcb0b02f2515491529e75b61",
     "semantic_hash": ""
   },
   "components/sections/HeroSlideshow.tsx": {
-    "mtime": 1792994691.556781,
-    "seen": 1792995441.0918155,
-    "ast_hash": "5ba70671b933e237156af8e2552e69bc",
+    "mtime": 1793010163.107182,
+    "seen": 1793011155.5576382,
+    "ast_hash": "fccb852cfc794739adb55d3ae09d80fa",
     "semantic_hash": ""
   },
   "components/sections/Services.tsx": {
-    "mtime": 1792995279.8679962,
-    "seen": 1792995441.0918174,
-    "ast_hash": "a1fe10bde3c00210857196f264dd38d7",
+    "mtime": 1793008665.3834147,
+    "seen": 1793008817.2737086,
+    "ast_hash": "350c0b851409bdce511878f918c935ec",
     "semantic_hash": ""
   },
   "components/ui/CurrentYear.tsx": {
@@ -1698,63 +1692,63 @@
     "semantic_hash": ""
   },
   "components/ui/Icon.tsx": {
-    "mtime": 1792988804.155288,
-    "seen": 1792989672.5958219,
-    "ast_hash": "5af459a44acf3f027f23c570c22a61e5",
+    "mtime": 1793005642.7188601,
+    "seen": 1793007792.3410234,
+    "ast_hash": "90dcad0d16e7089f5e1a26bde0290cc3",
     "semantic_hash": ""
   },
   "components/ui/Reveal.tsx": {
-    "mtime": 1792990408.8549128,
-    "seen": 1792993789.979346,
-    "ast_hash": "faf738426c76f7258e1500c1474c2e9e",
+    "mtime": 1793005642.7188601,
+    "seen": 1793007792.3410282,
+    "ast_hash": "23c9012f1749653a62b7e22ac4e0faac",
     "semantic_hash": ""
   },
   "components/ui/SampleNote.tsx": {
-    "mtime": 1792992012.4977002,
-    "seen": 1792993789.9793477,
-    "ast_hash": "a232d8524aa04bf8bc63b8e1f8b852c4",
+    "mtime": 1793005642.7198615,
+    "seen": 1793007792.3410296,
+    "ast_hash": "3b12fe7a8c9f95d868607061e3eca49c",
     "semantic_hash": ""
   },
   "components/ui/button.ts": {
-    "mtime": 1792992671.0950623,
-    "seen": 1792993789.9793491,
-    "ast_hash": "9b0b448f5886c0ee07f2dd9fa4ebbc71",
+    "mtime": 1793007363.135566,
+    "seen": 1793007792.3410313,
+    "ast_hash": "59ef18ffe9358d8d9a633da3a66132ad",
     "semantic_hash": ""
   },
   "data/credits.ts": {
-    "mtime": 1792997669.7988582,
-    "seen": 1792997932.9868715,
-    "ast_hash": "194bea238c57109325d43dde45fc88c0",
+    "mtime": 1793005642.7208605,
+    "seen": 1793007792.3410332,
+    "ast_hash": "4c84f76dba4aa9d5f9a26e615586cc8b",
     "semantic_hash": ""
   },
   "data/gallery.ts": {
-    "mtime": 1792998377.7102897,
-    "seen": 1792998671.0280504,
-    "ast_hash": "180143c5c95a7205e1238b958b326ba2",
+    "mtime": 1793005642.7208605,
+    "seen": 1793007792.3410347,
+    "ast_hash": "80a218e04befcab3062ac0090f4b5f76",
     "semantic_hash": ""
   },
   "data/images.ts": {
-    "mtime": 1792997650.9749596,
-    "seen": 1792997932.9869976,
-    "ast_hash": "dc0b317026744ea04c388e6e657b71c2",
+    "mtime": 1793005642.7218597,
+    "seen": 1793007792.3410363,
+    "ast_hash": "04396d507e1acde5cdb4fd0436ced0f1",
     "semantic_hash": ""
   },
   "data/people.ts": {
-    "mtime": 1792997044.3714783,
-    "seen": 1792997312.238691,
-    "ast_hash": "3294dc6ce3637c4e29ded6e2e40b82f7",
+    "mtime": 1793005642.7218597,
+    "seen": 1793007792.3410378,
+    "ast_hash": "c68e1d60b41928c78b3d68d7f5f801d1",
     "semantic_hash": ""
   },
   "data/services.ts": {
-    "mtime": 1792995037.2660558,
-    "seen": 1792995441.0929556,
-    "ast_hash": "0af2a692c8eaf26148e8bc254441f8da",
+    "mtime": 1793005642.7228599,
+    "seen": 1793007792.3410394,
+    "ast_hash": "bc0291c160eccf88242810ec82287f9b",
     "semantic_hash": ""
   },
   "data/site.ts": {
-    "mtime": 1792997041.9631367,
-    "seen": 1792997312.238816,
-    "ast_hash": "8740a48aee06b7271655e35dcc75faa7",
+    "mtime": 1793012584.8644638,
+    "seen": 1793012896.7894328,
+    "ast_hash": "77e0ead1d3383c442361984c65c7bd6a",
     "semantic_hash": ""
   },
   "lib/format.ts": {
@@ -1764,15 +1758,15 @@
     "semantic_hash": ""
   },
   "public/images/credits.json": {
-    "mtime": 1792997616.0823467,
-    "seen": 1792997932.9878688,
-    "ast_hash": "d08df285079fd4f134e2017c06da2559",
+    "mtime": 1793005642.7738628,
+    "seen": 1793007792.3415744,
+    "ast_hash": "1afe3fc4336b8b58c80a09b1062ff23d",
     "semantic_hash": ""
   },
   "types/content.ts": {
-    "mtime": 1792998360.785598,
-    "seen": 1792998671.029815,
-    "ast_hash": "c973ff4079d3c67d21909841181262d4",
+    "mtime": 1793005642.8448598,
+    "seen": 1793007792.341839,
+    "ast_hash": "f326d76d5c533b76fd9f3f9f016d0d41",
     "semantic_hash": ""
   },
   ".agents/skills/editorial/DESIGN.md": {
@@ -1827,18 +1821,6 @@
     "mtime": 1792745030.9259076,
     "seen": 1792746555.4070716,
     "ast_hash": "64fdd70d53a1ad6eb3f8323d463f589d",
-    "semantic_hash": ""
-  },
-  ".claude/skills/editorial/DESIGN.md": {
-    "mtime": 1792744997.8505442,
-    "seen": 1792746555.4097066,
-    "ast_hash": "4cf7ad45ea574e247c64c0e496c25f5d",
-    "semantic_hash": ""
-  },
-  ".claude/skills/editorial/SKILL.md": {
-    "mtime": 1792744997.8505442,
-    "seen": 1792746555.4097083,
-    "ast_hash": "44dc8d5f4e4a2f9da8ffa25ebc78c1b8",
     "semantic_hash": ""
   },
   ".claude/skills/image-to-code/SKILL.md": {
@@ -2796,75 +2778,81 @@
     "semantic_hash": ""
   },
   "public/images/hero-salon-1.jpg": {
-    "mtime": 1792994665.5413315,
-    "seen": 1792995441.136493,
+    "mtime": 1793005642.7738628,
+    "seen": 1793007792.3894107,
     "ast_hash": "a5c608cc9d7dd78884e6ad628413ef65",
     "semantic_hash": ""
   },
   "public/images/hero-salon-2.jpg": {
-    "mtime": 1792994665.9209144,
-    "seen": 1792995441.1364956,
+    "mtime": 1793005642.7738628,
+    "seen": 1793007792.3894129,
     "ast_hash": "d9087e0af3f18c026528815869ec2463",
     "semantic_hash": ""
   },
   "public/images/hero-salon-3.jpg": {
-    "mtime": 1792994666.1781027,
-    "seen": 1792995441.1364975,
+    "mtime": 1793005642.7738628,
+    "seen": 1793007792.389415,
     "ast_hash": "d5e88d5d1e6fcad1e4578a8033d7d034",
     "semantic_hash": ""
   },
   "public/images/service-blowout.jpg": {
-    "mtime": 1792994927.9682422,
-    "seen": 1792995441.136499,
+    "mtime": 1793005642.7898695,
+    "seen": 1793007792.3894186,
     "ast_hash": "91f3fd2524ff9f0741a22842db71df2a",
     "semantic_hash": ""
   },
   "public/images/service-treatment.jpg": {
-    "mtime": 1792994925.973677,
-    "seen": 1792995441.1365006,
+    "mtime": 1793005642.7928665,
+    "seen": 1793007792.3894203,
     "ast_hash": "0bc16a015331f149dc173187af6f0e7a",
     "semantic_hash": ""
   },
   "public/images/stylist-consultation.jpg": {
-    "mtime": 1792995955.4136496,
-    "seen": 1792996889.2239773,
+    "mtime": 1793005642.8088596,
+    "seen": 1793007792.3894236,
     "ast_hash": "de5788f3ce7a3b4a27a8db9b90d78325",
     "semantic_hash": ""
   },
   "public/images/stylist-portrait-craft.jpg": {
-    "mtime": 1792995964.6295097,
-    "seen": 1792996889.223982,
+    "mtime": 1793005642.8378596,
+    "seen": 1793007792.389429,
     "ast_hash": "3c3dc335e47a73a2d719f8e3c0ef7583",
     "semantic_hash": ""
   },
   "public/images/stylist-chair-serenity.jpg": {
-    "mtime": 1792997126.9688451,
-    "seen": 1792997312.2802007,
+    "mtime": 1793005642.805865,
+    "seen": 1793007792.389422,
     "ast_hash": "1111cf84c67f85faa7ed45e13955ce65",
     "semantic_hash": ""
   },
   "public/images/stylist-imre-vale.jpg": {
-    "mtime": 1792997026.7296188,
-    "seen": 1792997312.2803273,
+    "mtime": 1793005642.8168595,
+    "seen": 1793007792.3894255,
     "ast_hash": "a9599c55a2dfa8a74147428e04f89a18",
     "semantic_hash": ""
   },
   "public/images/stylist-noa-hart.jpg": {
-    "mtime": 1792997015.616815,
-    "seen": 1792997312.2803297,
+    "mtime": 1793005642.8268614,
+    "seen": 1793007792.3894272,
     "ast_hash": "ff29093a4de8674bed68ce4f543ebc28",
     "semantic_hash": ""
   },
   "public/images/stylist-sasha-okoro.jpg": {
-    "mtime": 1792997037.3121605,
-    "seen": 1792997312.2804554,
+    "mtime": 1793005642.84386,
+    "seen": 1793007792.3894312,
     "ast_hash": "d3aa599a187d260a44129b52295a9dbf",
     "semantic_hash": ""
   },
   "public/images/salon-candid-floor.jpg": {
-    "mtime": 1792997616.08117,
-    "seen": 1792997933.0456903,
+    "mtime": 1793005642.7868664,
+    "seen": 1793007792.3894167,
     "ast_hash": "0826f29fdf91b20db95b9131735b8488",
+    "semantic_hash": ""
+  },
+  ".github/workflows/ci.yml": {
+    "mtime": 1793005642.7078607,
+    "seen": 1793007792.3882356,
+    "ast_hash": "80ecdc3669dc33bcab55d565456f0fc3",
     "semantic_hash": ""
   }
 }

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
+import { site } from "@/data/site";
 import type { GalleryItem } from "@/types/content";
 
 type LightboxProps = {
@@ -89,7 +90,7 @@ export function Lightbox({ items, index, onIndexChange, onClose }: LightboxProps
         <div className="flex items-center justify-between gap-6 bg-paper/5 px-6 py-4">
           <div className="flex items-center gap-4">
             <span className="text-small tracking-wider uppercase text-paper/60">
-              Ivory &amp; Ash Archive
+              {site.name} Archive
             </span>
             <span className="text-small text-paper/40">·</span>
             <p className="text-small font-medium text-paper" aria-live="polite">

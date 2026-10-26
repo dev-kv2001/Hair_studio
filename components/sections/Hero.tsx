@@ -44,8 +44,9 @@ export function Hero() {
       className="relative isolate flex min-h-[calc(100svh-4.5rem)] flex-col overflow-clip bg-ash text-paper"
     >
       <HeroSlideshow slides={slides}>
-        <div className="frame flex flex-1 flex-col justify-end pt-28 pb-2 sm:pt-32 lg:pt-10 lg:[@media(max-height:780px)]:pt-6">
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-x-8">
+        {/* The headline block centres in the space left above the monument; the top padding clears the slide controls. */}
+        <div className="frame flex flex-1 flex-col justify-end pt-36 pb-[clamp(1.5rem,5svh,3.5rem)]">
+          <div className="my-auto grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-x-8">
             <h1 id="hero-title" className="text-[clamp(2.75rem,1.2rem+5.2vw,6.25rem)] leading-[0.95] tracking-[-0.035em] lg:col-span-7">
               <span className="mask-line">
                 <span className="load-line">Hair, cut to</span>
@@ -80,7 +81,7 @@ export function Hero() {
           <p
             aria-hidden="true"
             translate="no"
-            className="mt-8 -ml-[0.045em] text-[min(21.6vw,35svh)] leading-[0.92] font-medium tracking-[-0.055em] whitespace-nowrap lg:mt-4 [@media(max-height:780px)]:text-[min(21.6vw,30svh)]"
+            className="mt-8 -ml-[0.045em] text-[min(14.7vw,24.1svh,13.2rem)] leading-[0.92] font-medium tracking-[-0.055em] whitespace-nowrap lg:mt-4 [@media(max-height:780px)]:text-[min(14.7vw,20.65svh,13.2rem)]"
           >
             <span className="mask-line pb-[0.24em]!">
               <span className="load-line" style={line(3)}>

@@ -1,24 +1,25 @@
 @import "tailwindcss";
 
 /*
- * The name's own colours. The page walks from ivory through oat and blush into taupe and ash,
- * one flat field per section; rosewood is the single accent and only ever marks an action.
- * Ivories sit at a blush hue (≤20°) so the ground reads warm without turning yellow.
+ * Obsidian & Copper. The page walks from warm ivory through oat and blush into charcoal and obsidian,
+ * one flat field per section; copper is the single accent and only ever marks an action.
+ * Blush and oat are warm ivory stepped toward muted taupe; the deeper tones mix taupe or copper
+ * with obsidian so text keeps AA contrast.
  */
 @theme {
-  --color-ivory: #f5efec;
-  --color-blush: #ebdad4;
-  --color-oat: #e3d8cc;
-  --color-taupe: #5c4b44;
-  --color-ash: #2f2926;
-  --color-charcoal: #1f1b19;
+  --color-ivory: #f6f0e8;
+  --color-blush: #e7dfd6;
+  --color-oat: #dbd2c8;
+  --color-taupe: #49433e;
+  --color-ash: #292624;
+  --color-charcoal: #171717;
 
-  --color-ink: #2b211e;
-  --color-ink-soft: #64534c;
-  --color-paper: #f5efec;
-  --color-paper-soft: #d8cac2;
-  --color-rose: #6f3433;
-  --color-rose-deep: #552524;
+  --color-ink: #171717;
+  --color-ink-soft: #59524c;
+  --color-paper: #f6f0e8;
+  --color-paper-soft: #a99a8c;
+  --color-rose: #b8734f;
+  --color-rose-deep: #7b503a;
 
   --text-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
   --text-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
@@ -50,7 +51,7 @@
     color: var(--color-ink);
     color-scheme: light;
     scroll-padding-top: 5rem;
-    -webkit-tap-highlight-color: rgb(111 52 51 / 0.12);
+    -webkit-tap-highlight-color: rgb(184 115 79 / 0.12);
     scrollbar-color: var(--color-taupe) var(--color-oat);
   }
 
@@ -92,7 +93,7 @@
   }
 
   ::selection {
-    background: var(--color-rose);
+    background: var(--color-rose-deep);
     color: var(--color-paper);
   }
 
