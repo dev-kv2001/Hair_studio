@@ -14,10 +14,20 @@ type FieldErrors = Partial<Record<"name" | "contact" | "service" | "date", strin
 
 type Request = { name: string; service: string; date: string; time: string };
 
-const fieldClass =
-  "mt-2 block w-full min-h-12 bg-ivory px-4 py-3 text-body text-charcoal outline-none ring-2 ring-transparent transition-shadow placeholder:text-taupe focus-visible:ring-charcoal aria-[invalid=true]:ring-[#9b3b2f]";
-const labelClass = "block text-small font-medium text-moss-ink";
-const errorClass = "mt-2 text-small text-[#f3c9b9]";
+type BookingFormProps = {
+  variant?: "dark" | "light";
+};
+
+const getFieldClass = (variant: "dark" | "light") =>
+  variant === "light"
+    ? "mt-2 block w-full min-h-12 bg-ivory px-4 py-3 text-body text-ink outline-none ring-1 ring-ink/10 transition-[box-shadow,background-color] duration-200 placeholder:text-ink-soft hover:bg-ivory focus-visible:ring-2 focus-visible:ring-ink aria-[invalid=true]:ring-[#d9485f]"
+    : "mt-2 block w-full min-h-12 bg-ash px-4 py-3 text-body text-paper outline-none ring-2 ring-transparent transition-[box-shadow,background-color] duration-200 [color-scheme:dark] placeholder:text-paper-soft hover:bg-taupe focus-visible:ring-paper aria-[invalid=true]:ring-[#f08a9a]";
+
+const getLabelClass = (variant: "dark" | "light") =>
+  variant === "light" ? "block text-small font-medium text-ink" : "block text-small font-medium text-paper";
+
+const getErrorClass = (variant: "dark" | "light") =>
+  variant === "light" ? "mt-2 text-small text-[#b82d43]" : "mt-2 text-small text-[#f4b6bf]";
 
 function todayIso() {
   const today = new Date();
@@ -40,7 +50,7 @@ function validate(data: FormData): FieldErrors {
   return errors;
 }
 
-export function BookingForm() {
+export function BookingForm({ variant = "dark" }: BookingFormProps = {}) {
   const { serviceId, setServiceId } = useBooking();
   const [errors, setErrors] = useState<FieldErrors>({});
   const [request, setRequest] = useState<Request | null>(null);
@@ -48,6 +58,10 @@ export function BookingForm() {
   const minDate = useSyncExternalStore(subscribeNever, todayIso, () => undefined);
   const confirmationRef = useRef<HTMLHeadingElement>(null);
   const formId = useId();
+
+  const fieldClass = getFieldClass(variant);
+  const labelClass = getLabelClass(variant);
+  const errorClass = getErrorClass(variant);
 
   useEffect(() => {
     if (request) confirmationRef.current?.focus();
@@ -80,7 +94,7 @@ export function BookingForm() {
 
   if (request) {
     return (
-      <div role="status" className="bg-ivory p-6 text-charcoal sm:p-10">
+      <div role="status" className="bg-ivory p-6 text-ink sm:p-10">
         <h3 ref={confirmationRef} tabIndex={-1} className="text-head outline-none">
           Demo request noted
         </h3>
@@ -109,7 +123,7 @@ export function BookingForm() {
 
   return (
     <form noValidate onSubmit={handleSubmit} aria-describedby={`${formId}-notice`} className="grid gap-6 sm:grid-cols-2">
-      <p id={`${formId}-notice`} className="text-small text-moss-ink sm:col-span-2">
+      <p id={`${formId}-notice`} className={`text-small sm:col-span-2 ${variant === "light" ? "text-ink-soft" : "text-paper-soft"}`}>
         Demo form: nothing you enter leaves this page.
       </p>
 
@@ -198,7 +212,10 @@ export function BookingForm() {
       </div>
 
       <div className="sm:col-span-2">
-        <button type="submit" className={buttonClass("light", "w-full sm:w-auto")}>
+        <button
+          type="submit"
+          className={buttonClass(variant === "light" ? "solid" : "light", "w-full sm:w-auto")}
+        >
           Send demo request
         </button>
       </div>

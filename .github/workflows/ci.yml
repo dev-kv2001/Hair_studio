@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [dev, dev-release, release]
+  pull_request:
+    branches: [dev, dev-release, release]
+
+permissions:
+  contents: read
+
+# Cancel an in-progress run when a newer commit lands on the same branch or PR.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Lint, type-check and build
+    runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      # Next.js 16 requires Node >= 20.9.0 (no .nvmrc or engines field in the project).
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Runs the project's `lint` script on the application source only. The committed
+      # agent-skill tooling (.agents, .claude, .cursor, .gemini) is third-party code.
+      - name: Lint
+        run: npm run lint -- app components data lib types next.config.ts
+
+      # next-env.d.ts and .next/types are gitignored, so generate them before tsc.
+      - name: Type-check
+        run: |
+          npx next typegen
+          npx tsc --noEmit
+
+      - name: Build
+        run: npm run build

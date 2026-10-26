@@ -1,18 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
-
-const bodoni = Bodoni_Moda({
-  variable: "--font-bodoni",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Ivory & Ash Hair Studio (demo)",
@@ -21,18 +8,20 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f6f3ee",
+  themeColor: "#f5efec",
   colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en-GB"
-      data-scroll-behavior="smooth"
-      className={`${bodoni.variable} ${hanken.variable} antialiased`}
-    >
-      <body className="min-h-full bg-ivory text-charcoal">{children}</body>
+    <html lang="en-GB" data-scroll-behavior="smooth" className="antialiased">
+      <head>
+        {/* Erode, a chiselled wedge serif from Fontshare (free licence), is the page's one family. */}
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
+        <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" />
+      </head>
+      <body className="min-h-full bg-ivory text-ink">{children}</body>
     </html>
   );
 }

@@ -36,9 +36,9 @@ export const services: Service[] = [
     samplePrice: 40,
     duration: "30–45 min",
     photo: {
-      src: images.cornrowsPortrait,
-      alt: "Neat straight-back cornrows on a seated man",
-      focus: "50% 12%",
+      src: images.serviceTreatment,
+      alt: "A dropper of hair oil worked through long blonde lengths",
+      focus: "48% 45%",
     },
   },
   {
@@ -62,9 +62,9 @@ export const services: Service[] = [
     samplePrice: 55,
     duration: "60 min",
     photo: {
-      src: images.balayageWaves,
-      alt: "The soft, wavy lengths of long honey balayage hair",
-      focus: "50% 75%",
+      src: images.washBasins,
+      alt: "Wash basins and tufted leather chairs in a calm salon",
+      focus: "32% 70%",
     },
   },
   {
@@ -75,9 +75,9 @@ export const services: Service[] = [
     samplePrice: 35,
     duration: "30–45 min",
     photo: {
-      src: images.balayageWaves,
-      alt: "Long wavy hair in honey and caramel balayage, seen from behind",
-      focus: "50% 40%",
+      src: images.serviceBlowout,
+      alt: "A smooth lock of blonde hair beside a hairdryer on white marble",
+      focus: "66% 50%",
     },
   },
 ];

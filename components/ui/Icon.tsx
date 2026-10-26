@@ -4,6 +4,7 @@ const paths = {
   arrowRight: <path d="M5 12h14M13 6l6 6-6 6" />,
   arrowLeft: <path d="M19 12H5M11 6l-6 6 6 6" />,
   external: <path d="M14 5h5v5M19 5l-8 8M17 13v6H5V7h6" />,
+  expand: <path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7" />,
 } as const;
 
 export type IconName = keyof typeof paths;

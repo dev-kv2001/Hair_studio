@@ -1,43 +1,57 @@
 @import "tailwindcss";
 
+/*
+ * The name's own colours. The page walks from ivory through oat and blush into taupe and ash,
+ * one flat field per section; rosewood is the single accent and only ever marks an action.
+ * Ivories sit at a blush hue (≤20°) so the ground reads warm without turning yellow.
+ */
 @theme {
-  --color-ivory: #f6f3ee;
-  --color-cream: #ece6dd;
-  --color-oat: #dcd2c4;
-  --color-taupe: #6b5d51;
-  --color-ash: #b3a596;
-  --color-charcoal: #1f1b18;
-  --color-moss: #3c4437;
-  --color-moss-ink: #ece6d8;
+  --color-ivory: #f5efec;
+  --color-blush: #ebdad4;
+  --color-oat: #e3d8cc;
+  --color-taupe: #5c4b44;
+  --color-ash: #2f2926;
+  --color-charcoal: #1f1b19;
+
+  --color-ink: #2b211e;
+  --color-ink-soft: #64534c;
+  --color-paper: #f5efec;
+  --color-paper-soft: #d8cac2;
+  --color-rose: #6f3433;
+  --color-rose-deep: #552524;
 
   --text-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
   --text-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --text-lead: clamp(1.375rem, 1.15rem + 0.8vw, 1.875rem);
-  --text-head: clamp(2.25rem, 1.4rem + 3.4vw, 4.5rem);
-  --text-display: clamp(3rem, 0.5rem + 6.6vw, 7.5rem);
+  --text-head: clamp(2.375rem, 1.4rem + 3.2vw, 4.25rem);
+  --text-monument: clamp(4.5rem, 1rem + 12.5vw, 15rem);
 
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 @theme inline {
-  --font-display: var(--font-bodoni);
-  --font-sans: var(--font-hanken);
+  --font-display: "Erode", ui-serif, Georgia, serif;
+  --font-sans: "Erode", ui-serif, Georgia, serif;
 }
 
 @utility frame {
   width: 100%;
   max-width: 90rem;
   margin-inline: auto;
-  padding-inline: clamp(1rem, 5vw, 4.5rem);
+  padding-inline: clamp(1rem, 4vw, 4rem);
 }
 
 @layer base {
   html {
     background: var(--color-ivory);
-    color: var(--color-charcoal);
+    color: var(--color-ink);
     color-scheme: light;
     scroll-padding-top: 5rem;
-    -webkit-tap-highlight-color: rgb(31 27 24 / 0.08);
+    -webkit-tap-highlight-color: rgb(111 52 51 / 0.12);
+    scrollbar-color: var(--color-taupe) var(--color-oat);
   }
 
   a,
@@ -58,6 +72,7 @@
     font-family: var(--font-sans);
     font-size: var(--text-body);
     line-height: 1.55;
+    font-kerning: normal;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -66,7 +81,7 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.025em;
     line-height: 0.98;
     text-wrap: balance;
@@ -77,8 +92,8 @@
   }
 
   ::selection {
-    background: var(--color-charcoal);
-    color: var(--color-ivory);
+    background: var(--color-rose);
+    color: var(--color-paper);
   }
 
   :focus-visible {
@@ -89,56 +104,207 @@
   input,
   select,
   textarea {
-    caret-color: currentColor;
+    caret-color: var(--color-rose);
   }
 
   a {
-    text-underline-offset: 0.22em;
+    text-underline-offset: 0.24em;
     text-decoration-thickness: 1px;
-  }
-
-  html {
-    scrollbar-color: var(--color-ash) var(--color-ivory);
   }
 }
 
 /* Entrance motion: content is visible by default and only hidden once JS is ready to reveal it. */
 [data-reveal="hidden"] {
   opacity: 0;
-  transform: translateY(1.5rem);
+  transform: translateY(1.75rem);
 }
 
 [data-reveal="shown"] {
   opacity: 1;
   transform: none;
   transition:
-    opacity 0.9s var(--ease-out-quint),
-    transform 0.9s var(--ease-out-quint);
+    opacity 0.8s var(--ease-out-quint),
+    transform 1s var(--ease-expo);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-@keyframes slow-zoom {
+/* Shutter: a picture opens upward from its bottom edge while settling from a slight scale. */
+[data-reveal-variant="shutter"][data-reveal="hidden"],
+[data-reveal-variant="unroll"][data-reveal="hidden"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(100% 0 0 0);
+}
+
+/* Unroll: a picture drops in from its top edge. */
+[data-reveal-variant="unroll"][data-reveal="hidden"] {
+  clip-path: inset(0 0 100% 0);
+}
+
+[data-reveal-variant="shutter"][data-reveal="hidden"] img,
+[data-reveal-variant="unroll"][data-reveal="hidden"] img {
+  transform: scale(1.12);
+}
+
+[data-reveal-variant="shutter"][data-reveal="shown"],
+[data-reveal-variant="unroll"][data-reveal="shown"] {
+  clip-path: inset(0);
+  transition: clip-path 1.1s var(--ease-in-out-quart);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* An animation, not a transition, so the picture keeps its own opacity and hover transitions. */
+[data-reveal-variant="shutter"][data-reveal="shown"] img,
+[data-reveal-variant="unroll"][data-reveal="shown"] img {
+  animation: load-settle 1.6s var(--ease-soft) var(--reveal-delay, 0ms) both;
+}
+
+/* Masked lines: each line of a heading rises from behind its own baseline. */
+.mask-line {
+  display: block;
+  overflow: clip;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+
+.mask-line > span {
+  display: block;
+}
+
+@keyframes line-up {
   from {
-    transform: scale(1.06);
-  }
-  to {
-    transform: scale(1);
+    transform: translateY(108%);
   }
 }
 
-.slow-zoom {
-  animation: slow-zoom 2.4s var(--ease-out-quint) both;
+@keyframes load-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.875rem);
+  }
+}
+
+@keyframes load-settle {
+  from {
+    transform: scale(1.1);
+  }
+}
+
+/* The hero background's slow drift: each photograph moves its own way between --from and --to. */
+@keyframes hero-drift {
+  from {
+    transform: scale(1.06) translate(var(--from, 0, 0));
+  }
+  to {
+    transform: scale(1.16) translate(var(--to, 0, 0));
+  }
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes photo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+}
+
+@keyframes item-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+}
+
+/* Hero load sequence: everything is painted on the first frame; this only adds arrival (settled by ~1.4s). */
+@media (prefers-reduced-motion: no-preference) {
+  .load-line {
+    animation: line-up 1s var(--ease-expo) both;
+    animation-delay: calc(140ms + var(--i, 0) * 90ms);
+  }
+
+  .load-rise {
+    animation: load-rise 0.6s var(--ease-out-quint) both;
+    animation-delay: var(--d, 420ms);
+  }
+
+  /* Continuous, slow and alternating, so the background never jumps; transform only. */
+  .hero-drift {
+    animation: hero-drift 22s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .hero-progress {
+    animation: hero-progress var(--hold, 7s) linear both;
+  }
+
+  .hero-fade {
+    animation: hero-fade 0.8s var(--ease-out-quint) 900ms both;
+  }
+
+  .photo-in {
+    animation: photo-in 0.5s var(--ease-out-quint) both;
+  }
+
+  .item-in {
+    animation: item-in 0.7s var(--ease-expo) both;
+    animation-delay: var(--d, 0ms);
+  }
+}
+
+/* Scroll-linked moves: linear, small travel, and only where the browser has scroll timelines. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes drift {
+      from {
+        transform: translateY(-4%) scale(1.1);
+      }
+      to {
+        transform: translateY(4%) scale(1.1);
+      }
+    }
+
+    @keyframes wordmark-rise {
+      from {
+        transform: translateY(30%);
+        opacity: 0.15;
+      }
+    }
+
+    .scroll-drift {
+      animation: drift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+
+    .scroll-rise {
+      animation: wordmark-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
+    clip-path: none !important;
     transition: none !important;
   }
 
-  .slow-zoom {
-    animation: none;
+  [data-reveal] img {
+    transform: none !important;
   }
 
   *,

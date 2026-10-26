@@ -3,96 +3,209 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { Lightbox } from "@/components/gallery/Lightbox";
+import { Icon } from "@/components/ui/Icon";
+import { Reveal } from "@/components/ui/Reveal";
 import { galleryCategories } from "@/data/gallery";
 import type { GalleryCategory, GalleryItem } from "@/types/content";
 
 type Filter = GalleryCategory | "All";
 
-// Prints on a wall: each pair of photos takes one of four arrangements, so no two rows repeat.
-// Desktop places them on a 12-column grid; phones alternate widths and sides.
-// Ratios stay portrait or square because most of the photographs are portraits.
-const placements = [
-  { box: "lg:col-start-1 lg:col-span-4", ratio: "aspect-[3/4]", phone: "w-[70%]" },
-  { box: "lg:col-start-7 lg:col-span-5 lg:mt-48", ratio: "aspect-square", phone: "ml-auto w-[84%]" },
-  { box: "lg:col-start-6 lg:col-span-5", ratio: "aspect-[4/5]", phone: "w-[64%]" },
-  { box: "lg:col-start-2 lg:col-span-3 lg:mt-32", ratio: "aspect-[3/4]", phone: "w-full" },
-  { box: "lg:col-start-9 lg:col-span-4", ratio: "aspect-[3/4]", phone: "ml-auto w-[70%]" },
-  { box: "lg:col-start-2 lg:col-span-5 lg:mt-48", ratio: "aspect-square", phone: "w-[84%]" },
-  { box: "lg:col-start-2 lg:col-span-5", ratio: "aspect-[4/5]", phone: "ml-auto w-[64%]" },
-  { box: "lg:col-start-9 lg:col-span-3 lg:mt-32", ratio: "aspect-[3/4]", phone: "w-full" },
+/**
+ * Editorial perspective and aspect composition settings for the experimental gallery layout.
+ * Creates an asymmetric rhythm where each image possesses its own distinct presence,
+ * tilt, and cinematic proportion.
+ */
+const editorialLayout = [
+  {
+    colSpan: "lg:col-span-7",
+    aspect: "aspect-[16/11]",
+    tilt: "hover:rotate-0",
+    captionSide: "bottom",
+  },
+  {
+    colSpan: "lg:col-span-5",
+    aspect: "aspect-[4/5]",
+    tilt: "hover:rotate-0",
+    captionSide: "bottom",
+  },
+  {
+    colSpan: "lg:col-span-4",
+    aspect: "aspect-[3/4]",
+    tilt: "hover:rotate-0",
+    captionSide: "bottom",
+  },
+  {
+    colSpan: "lg:col-span-8",
+    aspect: "aspect-[16/10]",
+    tilt: "hover:rotate-0",
+    captionSide: "bottom",
+  },
 ];
-
-function pairs<T>(list: T[]) {
-  const rows: T[][] = [];
-  for (let i = 0; i < list.length; i += 2) rows.push(list.slice(i, i + 2));
-  return rows;
-}
 
 export function GalleryWall({ items }: { items: GalleryItem[] }) {
   const [filter, setFilter] = useState<Filter>("All");
+  const [hasFiltered, setHasFiltered] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const openerRef = useRef<HTMLButtonElement | null>(null);
 
   const visible = filter === "All" ? items : items.filter((item) => item.category === filter);
 
   return (
-    <>
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-3" role="group" aria-label="Filter photos">
-        {(["All", ...galleryCategories] as Filter[]).map((option) => (
-          <button
-            key={option}
-            type="button"
-            aria-pressed={filter === option}
-            onClick={() => setFilter(option)}
-            className="min-h-11 px-4 text-small transition-colors hover:bg-oat aria-pressed:bg-charcoal aria-pressed:text-ivory"
-          >
-            {option}
-          </button>
-        ))}
-        <p className="ml-2 text-small text-taupe" aria-live="polite">
-          {visible.length} photos
-        </p>
+    <div className="space-y-12 lg:space-y-16">
+      {/* Category Filter Pills & Archive Counter */}
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div
+          className="flex flex-wrap items-center gap-2"
+          role="group"
+          aria-label="Filter archive photos"
+        >
+          {(["All", ...galleryCategories] as Filter[]).map((option) => {
+            const isSelected = filter === option;
+            const count =
+              option === "All"
+                ? items.length
+                : items.filter((item) => item.category === option).length;
+
+            return (
+              <button
+                key={option}
+                type="button"
+                aria-pressed={isSelected}
+                onClick={() => {
+                  setFilter(option);
+                  setHasFiltered(true);
+                }}
+                className={`min-h-11 px-5 py-2.5 text-small font-medium transition-[background-color,color,transform] duration-200 ease-out-quint cursor-pointer active:scale-[0.97] ${
+                  isSelected
+                    ? "bg-ink text-paper"
+                    : "bg-ivory/60 text-ink hover:bg-ivory"
+                }`}
+              >
+                <span>{option}</span>
+                <span
+                  className={`ml-2 text-small ${
+                    isSelected ? "text-paper/60" : "text-ink-soft"
+                  }`}
+                >
+                  ({count})
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="flex items-center gap-3 text-small text-ink-soft">
+          <span className="inline-block size-2 rounded-full bg-rose" />
+          <p aria-live="polite">
+            Displaying <strong className="font-medium text-ink">{visible.length}</strong> craft records
+          </p>
+        </div>
       </div>
 
-      <ul className="mt-16 flex flex-col gap-16 lg:gap-24">
-        {pairs(visible).map((row, rowIndex) => (
-          <li key={row.map((item) => item.id).join("-")} className="flex flex-col gap-16 lg:grid lg:grid-cols-12 lg:gap-x-8">
-            {row.map((item, itemIndex) => {
-              const position = rowIndex * 2 + itemIndex;
-              const placement = placements[position % placements.length];
-              return (
-                <figure key={item.id} className={`${placement.phone} ${placement.box} lg:row-start-1 lg:mx-0 lg:w-auto`}>
-                  <button
-                    type="button"
-                    className="group block w-full cursor-zoom-in"
-                    onClick={(event) => {
-                      openerRef.current = event.currentTarget;
-                      setOpenIndex(position);
-                    }}
+      {/* Asymmetric Cinematic Gallery Grid */}
+      <ul
+        key={filter}
+        className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-12 lg:gap-10"
+      >
+        {visible.map((item, position) => {
+          const layout = editorialLayout[position % editorialLayout.length];
+          const isHovered = hoveredId === item.id;
+
+          const card = (
+            <figure
+              className="group relative flex flex-col bg-ivory p-3.5 transition-[transform,background-color] duration-500 ease-out-quint hover:bg-ivory hover:-translate-y-1"
+              onMouseEnter={() => setHoveredId(item.id)}
+              onMouseLeave={() => setHoveredId(null)}
+            >
+              <button
+                type="button"
+                className="relative block w-full overflow-clip bg-oat cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+                onClick={(event) => {
+                  openerRef.current = event.currentTarget;
+                  setOpenIndex(position);
+                }}
+                aria-label={`Open detailed view for ${item.title}`}
+              >
+                <div className={`relative w-full ${layout.aspect} overflow-clip`}>
+                  <Image
+                    src={item.photo.src}
+                    alt={item.photo.alt}
+                    fill
+                    placeholder="blur"
+                    sizes="(min-width: 64rem) 50vw, 90vw"
+                    className="object-cover transition-transform duration-700 ease-out-quint group-hover:scale-105"
+                    style={{ objectPosition: item.photo.focus || "50% 50%" }}
+                  />
+
+                  {/* Cinematic Hover Overlay with Technique Cue */}
+                  <div className="absolute inset-0 bg-ink/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-5">
+                    {item.technique && (
+                      <span className="bg-ivory/95 px-3 py-1.5 text-small font-medium text-ink tracking-tight">
+                        {item.technique}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Expand Icon Badge */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute right-3 top-3 inline-flex size-11 items-center justify-center bg-ivory text-ink opacity-0 transition-[opacity,transform] duration-300 group-hover:opacity-100 group-hover:scale-100 scale-90"
                   >
-                    <span className="sr-only">Open larger: </span>
-                    <span className={`relative block overflow-hidden bg-oat ${placement.ratio}`}>
-                      <Image
-                        src={item.photo.src}
-                        alt={item.photo.alt}
-                        fill
-                        placeholder="blur"
-                        sizes="(min-width: 64rem) 45vw, 84vw"
-                        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
-                        style={{ objectPosition: item.photo.focus }}
-                      />
-                    </span>
-                  </button>
-                  <figcaption className="mt-3 text-small">
-                    {item.title} <span className="text-taupe">· {item.category}</span>
-                  </figcaption>
-                </figure>
-              );
-            })}
-          </li>
-        ))}
+                    <Icon name="expand" className="size-5" />
+                  </span>
+                </div>
+              </button>
+
+              {/* Editorial Caption Bar */}
+              <figcaption className="mt-4 flex flex-col gap-2">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-body font-medium text-ink tracking-tight">
+                    {item.title}
+                  </span>
+                  <span className="text-small font-medium text-rose uppercase tracking-wider">
+                    {item.category}
+                  </span>
+                </div>
+
+                {item.notes && (
+                  <p className="text-small text-ink-soft leading-relaxed line-clamp-2">
+                    {item.notes}
+                  </p>
+                )}
+
+                <div className="mt-1 flex items-center justify-between text-small text-ink-soft pt-2">
+                  <span>{item.duration ? `Duration: ${item.duration}` : "Ivory & Ash Craft"}</span>
+                  <span className="underline decoration-ink/20 underline-offset-4 group-hover:text-ink transition-colors">
+                    Inspect photo →
+                  </span>
+                </div>
+              </figcaption>
+            </figure>
+          );
+
+          return hasFiltered ? (
+            <li
+              key={item.id}
+              className={`item-in ${layout.colSpan}`}
+              style={{ "--d": `${position * 60}ms` } as React.CSSProperties}
+            >
+              {card}
+            </li>
+          ) : (
+            <Reveal
+              key={item.id}
+              as="li"
+              delay={position * 80}
+              className={layout.colSpan}
+            >
+              {card}
+            </Reveal>
+          );
+        })}
       </ul>
 
+      {/* Lightbox Dialog Container */}
       <Lightbox
         items={visible}
         index={openIndex}
@@ -102,6 +215,6 @@ export function GalleryWall({ items }: { items: GalleryItem[] }) {
           openerRef.current?.focus();
         }}
       />
-    </>
+    </div>
   );
 }

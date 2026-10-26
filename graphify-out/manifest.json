@@ -378,15 +378,15 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1792746065.87424,
-    "seen": 1792746555.4062853,
-    "ast_hash": "366d4c4dbae4a0b3a9a15eb82325fe35",
+    "mtime": 1792991979.169069,
+    "seen": 1792993789.978621,
+    "ast_hash": "da482f4cac710fd46395dae075a63640",
     "semantic_hash": ""
   },
   "app/page.tsx": {
-    "mtime": 1792744788.2039797,
-    "seen": 1792746555.406287,
-    "ast_hash": "617adeafa79e52a6287f3678abf0ae06",
+    "mtime": 1792998681.3697512,
+    "seen": 1792998889.3578012,
+    "ast_hash": "49236cc127ef478f5b44290637b27660",
     "semantic_hash": ""
   },
   "eslint.config.mjs": {
@@ -1601,138 +1601,6 @@
     "ast_hash": "4fe5f9e490ab4f107afc707d7eafc819",
     "semantic_hash": ""
   },
-  ".taste-skill/direction.json": {
-    "mtime": 1792739792.5387042,
-    "seen": 1792746555.406256,
-    "ast_hash": "58fe5ba0ac44239667750185f8174f29",
-    "semantic_hash": ""
-  },
-  ".taste-skill/interactions.mjs": {
-    "mtime": 1792745715.477628,
-    "seen": 1792746555.4062586,
-    "ast_hash": "54a060a78425dd777dedf39aebacd65f",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/all.json": {
-    "mtime": 1792740787.1912131,
-    "seen": 1792746555.4062603,
-    "ast_hash": "3b2648320e265920de57ac1197ae610d",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/backstage_hair_styling.json": {
-    "mtime": 1792740787.3537824,
-    "seen": 1792746555.4062614,
-    "ast_hash": "3e552717f6ef5c67e915b1b5b22f3299",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/blowout_hair.json": {
-    "mtime": 1792740787.2589593,
-    "seen": 1792746555.4062629,
-    "ast_hash": "30e493b505dcbc87a3d2d7c5e03f9d48",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/braid.json": {
-    "mtime": 1792740787.2912598,
-    "seen": 1792746555.4062638,
-    "ast_hash": "6b2b92058d572d73d65c34e6456d0aa6",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/bride_hair.json": {
-    "mtime": 1792740787.4329247,
-    "seen": 1792746555.406265,
-    "ast_hash": "8d1df2be2ff2a70aa875c9e6a95d421a",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hair_color.json": {
-    "mtime": 1792740787.2176933,
-    "seen": 1792746555.4062665,
-    "ast_hash": "9eefa0be2bb53acb8e5d070ae5b3321c",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hair_curls_portrait.json": {
-    "mtime": 1792740787.2333255,
-    "seen": 1792746555.4062676,
-    "ast_hash": "47879274097290f610b1f0a2ca742e1a",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hair_dryer_styling.json": {
-    "mtime": 1792740787.44855,
-    "seen": 1792746555.4062686,
-    "ast_hash": "5a7c181dfee5b750bd8a70c94846bd99",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hair_salon.json": {
-    "mtime": 1792740787.3240447,
-    "seen": 1792746555.40627,
-    "ast_hash": "b12afc17c342599d59ce62bb761a7997",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hair_salon_interior.json": {
-    "mtime": 1792740787.385034,
-    "seen": 1792746555.4062712,
-    "ast_hash": "b20e2c845d16c8d9df7d1a7eb43637be",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hair_treatment.json": {
-    "mtime": 1792740787.338158,
-    "seen": 1792746555.4062724,
-    "ast_hash": "7f10a1ab0437b7eb5cc7f40ca51de8b7",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hair_washing.json": {
-    "mtime": 1792740787.4016645,
-    "seen": 1792746555.4062734,
-    "ast_hash": "f005512f4567b4c3a8dabbe959b6d450",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/haircut_barber.json": {
-    "mtime": 1792740787.3697157,
-    "seen": 1792746555.4062748,
-    "ast_hash": "275bcd362a591d366bf316feeb883755",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hairdresser.json": {
-    "mtime": 1792740787.4209423,
-    "seen": 1792746555.4062757,
-    "ast_hash": "72f9774846b4ac0fcae2a00e4fdb4cd4",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/hairstyle.json": {
-    "mtime": 1792740787.2014935,
-    "seen": 1792746555.4062772,
-    "ast_hash": "ac9147a1e7c57e0665863f84b09c2792",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/long_hair_woman.json": {
-    "mtime": 1792740787.1660573,
-    "seen": 1792746555.4062784,
-    "ast_hash": "842cb2e35e2e68eb46018d280a26ba01",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/salon_chair_mirror.json": {
-    "mtime": 1792740787.1348076,
-    "seen": 1792746555.4062796,
-    "ast_hash": "fff3c5cfd28aadd5c251a54dbafca5cb",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/updo.json": {
-    "mtime": 1792740787.3069086,
-    "seen": 1792746555.406281,
-    "ast_hash": "8336df7b80068f82d76e3b1f15c090c2",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/search/wavy_hair.json": {
-    "mtime": 1792740787.338158,
-    "seen": 1792746555.4062822,
-    "ast_hash": "420245851e2dc0cae8ac93ab3341218c",
-    "semantic_hash": ""
-  },
-  ".taste-skill/shots.mjs": {
-    "mtime": 1792745928.3766918,
-    "seen": 1792746555.4062836,
-    "ast_hash": "a66b3c0cc5c47e42de2e08f84890abef",
-    "semantic_hash": ""
-  },
   "components/booking/BookButton.tsx": {
     "mtime": 1792744803.9211187,
     "seen": 1792746555.4062881,
@@ -1740,9 +1608,9 @@
     "semantic_hash": ""
   },
   "components/booking/BookingForm.tsx": {
-    "mtime": 1792746072.652205,
-    "seen": 1792746555.4062893,
-    "ast_hash": "b438e9a4122b9f3c0ba4536fb8743218",
+    "mtime": 1792999008.2884998,
+    "seen": 1792999344.7050707,
+    "ast_hash": "04fb5132482eae7a4be850df4e458148",
     "semantic_hash": ""
   },
   "components/booking/BookingProvider.tsx": {
@@ -1758,81 +1626,69 @@
     "semantic_hash": ""
   },
   "components/gallery/GalleryWall.tsx": {
-    "mtime": 1792745380.6474638,
-    "seen": 1792746555.4062932,
-    "ast_hash": "e57b0fa2d00668df20275d4f31a2ef04",
+    "mtime": 1792998476.0810792,
+    "seen": 1792998671.0258338,
+    "ast_hash": "83815fa0c19edaf522e88129e702a8a6",
     "semantic_hash": ""
   },
   "components/gallery/Lightbox.tsx": {
-    "mtime": 1792746068.1098204,
-    "seen": 1792746555.4062943,
-    "ast_hash": "1327959a889c2940d6ce80555b54b0e8",
+    "mtime": 1792998467.654344,
+    "seen": 1792998671.0258365,
+    "ast_hash": "89ef5060efefcf7bff36ff11baac7784",
     "semantic_hash": ""
   },
   "components/layout/SiteFooter.tsx": {
-    "mtime": 1792746309.412813,
-    "seen": 1792746555.4062955,
-    "ast_hash": "e509e1c7ec6970dbf1c392d24f788e76",
+    "mtime": 1792999661.879551,
+    "seen": 1792999838.5400338,
+    "ast_hash": "040c2e802315d4b68c1151bba88597cc",
     "semantic_hash": ""
   },
   "components/layout/SiteHeader.tsx": {
-    "mtime": 1792746069.2385073,
-    "seen": 1792746555.4062967,
-    "ast_hash": "f1b43eef036271be6728e24f7a823aac",
+    "mtime": 1792992036.9392266,
+    "seen": 1792993789.9790423,
+    "ast_hash": "c9bda6febecf82f454efa1461068cbad",
     "semantic_hash": ""
   },
   "components/sections/About.tsx": {
-    "mtime": 1792746049.3322573,
-    "seen": 1792746555.4062984,
-    "ast_hash": "9fc5591c657343dda1e0e1e3214726ea",
+    "mtime": 1792998016.23602,
+    "seen": 1792998178.3986425,
+    "ast_hash": "d4e20afd19f677e71efa65b699fb884e",
     "semantic_hash": ""
   },
   "components/sections/Appointment.tsx": {
-    "mtime": 1792744806.1754687,
-    "seen": 1792746555.4062996,
-    "ast_hash": "81a5b2ce5409e9213bb60348cc1dfa1d",
+    "mtime": 1792992282.8825102,
+    "seen": 1792993789.9790456,
+    "ast_hash": "8790dde0f106640a62b3ad1d18d28f80",
     "semantic_hash": ""
   },
   "components/sections/Contact.tsx": {
-    "mtime": 1792744785.9398415,
-    "seen": 1792746555.4063008,
-    "ast_hash": "0337fe86b8c9d748f1b0a90945da03cf",
+    "mtime": 1792999054.7944808,
+    "seen": 1792999344.7060606,
+    "ast_hash": "f71083da4d213a82d1bb14071b171f99",
     "semantic_hash": ""
   },
   "components/sections/Gallery.tsx": {
-    "mtime": 1792745381.8156035,
-    "seen": 1792746555.406302,
-    "ast_hash": "6d6ef90cf5b30030e0f1d9ae27cb54f6",
+    "mtime": 1792998503.4891682,
+    "seen": 1792998671.0264761,
+    "ast_hash": "04692ae549598ce55cba9721e60da4a8",
     "semantic_hash": ""
   },
   "components/sections/Hero.tsx": {
-    "mtime": 1792745344.3899906,
-    "seen": 1792746555.4063032,
-    "ast_hash": "398dfaf7f5cc55969249a6d1cf19c374",
+    "mtime": 1792994677.01602,
+    "seen": 1792995441.0918126,
+    "ast_hash": "c996724cf0f1e9a88b925a11770e3bbf",
     "semantic_hash": ""
   },
   "components/sections/HeroSlideshow.tsx": {
-    "mtime": 1792745347.9568067,
-    "seen": 1792746555.4063046,
-    "ast_hash": "416af9047fac709cb3918b199e47fe25",
+    "mtime": 1792994691.556781,
+    "seen": 1792995441.0918155,
+    "ast_hash": "5ba70671b933e237156af8e2552e69bc",
     "semantic_hash": ""
   },
   "components/sections/Services.tsx": {
-    "mtime": 1792754827.4174652,
-    "seen": 1792755008.7931228,
-    "ast_hash": "1aae9b7b418d3fb58f2c4656253cddc2",
-    "semantic_hash": ""
-  },
-  "components/sections/Stylists.tsx": {
-    "mtime": 1792746050.5223622,
-    "seen": 1792746555.4063067,
-    "ast_hash": "ddebb1681e96ef8bed2241bd4bbe79d5",
-    "semantic_hash": ""
-  },
-  "components/sections/Testimonials.tsx": {
-    "mtime": 1792745649.8205497,
-    "seen": 1792746555.4063082,
-    "ast_hash": "1daf2e2b3a1ed4eff6b787ffb0973c21",
+    "mtime": 1792995279.8679962,
+    "seen": 1792995441.0918174,
+    "ast_hash": "a1fe10bde3c00210857196f264dd38d7",
     "semantic_hash": ""
   },
   "components/ui/CurrentYear.tsx": {
@@ -1842,63 +1698,63 @@
     "semantic_hash": ""
   },
   "components/ui/Icon.tsx": {
-    "mtime": 1792744560.9958763,
-    "seen": 1792746555.4063106,
-    "ast_hash": "902d110f6aded32e2353e8bab9af07e5",
+    "mtime": 1792988804.155288,
+    "seen": 1792989672.5958219,
+    "ast_hash": "5af459a44acf3f027f23c570c22a61e5",
     "semantic_hash": ""
   },
   "components/ui/Reveal.tsx": {
-    "mtime": 1792744563.2704117,
-    "seen": 1792746555.4063118,
-    "ast_hash": "310f3f8a4ee240e987c38422fefa6cd3",
+    "mtime": 1792990408.8549128,
+    "seen": 1792993789.979346,
+    "ast_hash": "faf738426c76f7258e1500c1474c2e9e",
     "semantic_hash": ""
   },
   "components/ui/SampleNote.tsx": {
-    "mtime": 1792744562.1222763,
-    "seen": 1792746555.4063127,
-    "ast_hash": "bd2a8a28156964768af706d9433de55a",
+    "mtime": 1792992012.4977002,
+    "seen": 1792993789.9793477,
+    "ast_hash": "a232d8524aa04bf8bc63b8e1f8b852c4",
     "semantic_hash": ""
   },
   "components/ui/button.ts": {
-    "mtime": 1792744559.8622923,
-    "seen": 1792746555.406314,
-    "ast_hash": "7c84643b8658648a3d488fdb5d5c5970",
+    "mtime": 1792992671.0950623,
+    "seen": 1792993789.9793491,
+    "ast_hash": "9b0b448f5886c0ee07f2dd9fa4ebbc71",
     "semantic_hash": ""
   },
   "data/credits.ts": {
-    "mtime": 1792746089.0473943,
-    "seen": 1792746555.4063153,
-    "ast_hash": "0f27fb92bdec5efc9808de5f57880051",
+    "mtime": 1792997669.7988582,
+    "seen": 1792997932.9868715,
+    "ast_hash": "194bea238c57109325d43dde45fc88c0",
     "semantic_hash": ""
   },
   "data/gallery.ts": {
-    "mtime": 1792744512.0941577,
-    "seen": 1792746555.4063163,
-    "ast_hash": "23c47e3e350cc4ce8b71d3f4e36f6cee",
+    "mtime": 1792998377.7102897,
+    "seen": 1792998671.0280504,
+    "ast_hash": "180143c5c95a7205e1238b958b326ba2",
     "semantic_hash": ""
   },
   "data/images.ts": {
-    "mtime": 1792746089.002624,
-    "seen": 1792746555.4063175,
-    "ast_hash": "fd4de55cf9ef4f2cdc19b9f7a654aa0a",
+    "mtime": 1792997650.9749596,
+    "seen": 1792997932.9869976,
+    "ast_hash": "dc0b317026744ea04c388e6e657b71c2",
     "semantic_hash": ""
   },
   "data/people.ts": {
-    "mtime": 1792746047.0556915,
-    "seen": 1792746555.4063187,
-    "ast_hash": "6f299075981e416409cc64088795a555",
+    "mtime": 1792997044.3714783,
+    "seen": 1792997312.238691,
+    "ast_hash": "3294dc6ce3637c4e29ded6e2e40b82f7",
     "semantic_hash": ""
   },
   "data/services.ts": {
-    "mtime": 1792749623.0846415,
-    "seen": 1792755008.7946541,
-    "ast_hash": "455aca5c102ab9df86ae6015688201cc",
+    "mtime": 1792995037.2660558,
+    "seen": 1792995441.0929556,
+    "ast_hash": "0af2a692c8eaf26148e8bc254441f8da",
     "semantic_hash": ""
   },
   "data/site.ts": {
-    "mtime": 1792749783.0956917,
-    "seen": 1792755008.7946565,
-    "ast_hash": "f88dc11dc22a7895016e151947a92eab",
+    "mtime": 1792997041.9631367,
+    "seen": 1792997312.238816,
+    "ast_hash": "8740a48aee06b7271655e35dcc75faa7",
     "semantic_hash": ""
   },
   "lib/format.ts": {
@@ -1908,15 +1764,15 @@
     "semantic_hash": ""
   },
   "public/images/credits.json": {
-    "mtime": 1792746089.1680527,
-    "seen": 1792746555.4067197,
-    "ast_hash": "610072153156ebeb2912c43ecbabe92a",
+    "mtime": 1792997616.0823467,
+    "seen": 1792997932.9878688,
+    "ast_hash": "d08df285079fd4f134e2017c06da2559",
     "semantic_hash": ""
   },
   "types/content.ts": {
-    "mtime": 1792744507.5375636,
-    "seen": 1792746555.4068415,
-    "ast_hash": "4130a714f4ff67437331e8fd08e0ffee",
+    "mtime": 1792998360.785598,
+    "seen": 1792998671.029815,
+    "ast_hash": "c973ff4079d3c67d21909841181262d4",
     "semantic_hash": ""
   },
   ".agents/skills/editorial/DESIGN.md": {
@@ -2903,238 +2759,16 @@
     "ast_hash": "98087aedd18375666dbb093c859b2949",
     "semantic_hash": ""
   },
-  ".taste-skill/research/prev/list.txt": {
-    "mtime": 1792740787.44855,
-    "seen": 1792746555.4162529,
-    "ast_hash": "c6c90e2c700432214321f9a3caa96f43",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/list2.txt": {
-    "mtime": 1792740787.5325756,
-    "seen": 1792746555.4162543,
-    "ast_hash": "3b123a2c034b5115c48072616e658092",
-    "semantic_hash": ""
-  },
   "GEMINI.md": {
     "mtime": 1792729325.5792243,
     "seen": 1792746555.4163811,
     "ast_hash": "8d45843673d8084d1268ebd0fa920880",
     "semantic_hash": ""
   },
-  ".taste-skill/research/prev/commons_102145785.jpg": {
-    "mtime": 1792740787.4641776,
-    "seen": 1792746555.4166327,
-    "ast_hash": "30396d5bd151f65fb4bf5451a8ae91d7",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_102145809.jpg": {
-    "mtime": 1792740787.44855,
-    "seen": 1792746555.4166338,
-    "ast_hash": "fbc2027f7b584693a48fbca0baa758c7",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_10775435.jpg": {
-    "mtime": 1792740787.44855,
-    "seen": 1792746555.416635,
-    "ast_hash": "ecb0f42fa2a176821f446a84880bf7a4",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_113547024.jpg": {
-    "mtime": 1792740787.4798017,
-    "seen": 1792746555.4166365,
-    "ast_hash": "e3f0b0a46b2807f10fb4e35f1eb22954",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_114731469.jpg": {
-    "mtime": 1792740787.4798017,
-    "seen": 1792746555.416638,
-    "ast_hash": "116df6bfeffaec93449a92fd34b2d9f1",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_115371509.jpg": {
-    "mtime": 1792740787.4641776,
-    "seen": 1792746555.4166393,
-    "ast_hash": "6d3b398f3ad8c9465533f3beadc24563",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116285949.jpg": {
-    "mtime": 1792740787.4954236,
-    "seen": 1792746555.4166405,
-    "ast_hash": "7f6f67b349ed738ce8b53f6727d15f96",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116285951.jpg": {
-    "mtime": 1792740787.4954236,
-    "seen": 1792746555.4166417,
-    "ast_hash": "ebe3ebfee95088da520817da91162017",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116285952.jpg": {
-    "mtime": 1792740787.4954236,
-    "seen": 1792746555.416643,
-    "ast_hash": "3731e7579b9e3d0733ee35681faca499",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116530492.jpg": {
-    "mtime": 1792740787.4641776,
-    "seen": 1792746555.4166439,
-    "ast_hash": "b1c381804ad8f524f07e9a3f0df2aca8",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116533175.jpg": {
-    "mtime": 1792740787.44855,
-    "seen": 1792746555.416645,
-    "ast_hash": "ce3b78dc6d29e99954241ef465c3e6f4",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116535284.jpg": {
-    "mtime": 1792740787.5169394,
-    "seen": 1792746555.4166465,
-    "ast_hash": "5bed46b0a96f4b2e6d00c37e5bca1040",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116535285.jpg": {
-    "mtime": 1792740787.4798017,
-    "seen": 1792746555.4166477,
-    "ast_hash": "95e8fdad9133624cbfa0868e95f72b60",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116535289.jpg": {
-    "mtime": 1792740787.5169394,
-    "seen": 1792746555.4166486,
-    "ast_hash": "c258ff5be04b03e370898b7b8bfd8695",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116535290.jpg": {
-    "mtime": 1792740787.5325756,
-    "seen": 1792746555.41665,
-    "ast_hash": "76dd998f54c4615942deb6768cbc7071",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_116535294.jpg": {
-    "mtime": 1792740787.44855,
-    "seen": 1792746555.4166512,
-    "ast_hash": "7391b4047cfe5cdfe7033d9b54534a21",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_133877446.jpg": {
-    "mtime": 1792740787.5325756,
-    "seen": 1792746555.4166524,
-    "ast_hash": "2e3afa6d5f9a620b974e31ac0cad3cdb",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_133877492.jpg": {
-    "mtime": 1792740787.4641776,
-    "seen": 1792746555.4166539,
-    "ast_hash": "a71ff13a807212a22bb30e9e736dc66c",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_147738373.jpg": {
-    "mtime": 1792740787.5169394,
-    "seen": 1792746555.416655,
-    "ast_hash": "f56b5685b34e01263c1713fc4ba09b4b",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_149106420.jpg": {
-    "mtime": 1792740787.4798017,
-    "seen": 1792746555.4166565,
-    "ast_hash": "1c6f95de056acf10011934bfe04dc32d",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_149106422.jpg": {
-    "mtime": 1792740787.4954236,
-    "seen": 1792746555.4166574,
-    "ast_hash": "15ce3b8a58a6695b6d4edecc595ed0cd",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_152759009.jpg": {
-    "mtime": 1792740787.4954236,
-    "seen": 1792746555.4166586,
-    "ast_hash": "3c52a75efe6502988c150ab20a38649a",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_154828931.jpg": {
-    "mtime": 1792740787.5169394,
-    "seen": 1792746555.41666,
-    "ast_hash": "0bef469566dbffdd66d80f708d4148e6",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_157505285.jpg": {
-    "mtime": 1792740787.5169394,
-    "seen": 1792746555.416661,
-    "ast_hash": "c42ae5005530f5952d476390df8d178a",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_158747228.jpg": {
-    "mtime": 1792740787.4954236,
-    "seen": 1792746555.4166622,
-    "ast_hash": "46d490759f40cd6e5a6e0f597dc301f2",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_180549242.jpg": {
-    "mtime": 1792740787.5169394,
-    "seen": 1792746555.4166634,
-    "ast_hash": "f5a94b941e8136ffa85e5e92d6f79801",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_180549243.jpg": {
-    "mtime": 1792740787.5325756,
-    "seen": 1792746555.4166646,
-    "ast_hash": "8bf2d70ece35f593513595cf3d03620d",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_195948209.jpg": {
-    "mtime": 1792740787.5169394,
-    "seen": 1792746555.416666,
-    "ast_hash": "e4d078a170e5bb57bfc887b24fbaa4c8",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_71268169.jpg": {
-    "mtime": 1792740787.5325756,
-    "seen": 1792746555.4166675,
-    "ast_hash": "7ad79903f1472c7c55826b9aacf70d10",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_74147299.jpg": {
-    "mtime": 1792740787.4641776,
-    "seen": 1792746555.4166684,
-    "ast_hash": "35a437a82c11f149d943502e5ce1f189",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_84604678.jpg": {
-    "mtime": 1792740787.4641776,
-    "seen": 1792746555.4166696,
-    "ast_hash": "5ea73a4e90bd4fbee2224ca4ab60f6ed",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/commons_90570401.jpg": {
-    "mtime": 1792740787.4954236,
-    "seen": 1792746555.4166708,
-    "ast_hash": "ad52e88f6bf036f054f4960d1f8175eb",
-    "semantic_hash": ""
-  },
-  ".taste-skill/research/prev/openverse_a8b4d7ee-e7b6-4186-9975-591c65072f02.jpg": {
-    "mtime": 1792740787.4641776,
-    "seen": 1792746555.416672,
-    "ast_hash": "b6af15fbb0cf793a676e148ee2000941",
-    "semantic_hash": ""
-  },
-  "public/images/backstage-styling.jpg": {
-    "mtime": 1792740676.437081,
-    "seen": 1792746555.4169364,
-    "ast_hash": "db8c4f27f319f7f3a53b91873e423f92",
-    "semantic_hash": ""
-  },
   "public/images/balayage-waves.jpg": {
     "mtime": 1792740665.4937158,
     "seen": 1792746555.4169383,
     "ast_hash": "2e3afa6d5f9a620b974e31ac0cad3cdb",
-    "semantic_hash": ""
-  },
-  "public/images/braiding-session.jpg": {
-    "mtime": 1792740675.3154073,
-    "seen": 1792746555.4169397,
-    "ast_hash": "e8410b22d259f86bdcea81c1bbc54551",
     "semantic_hash": ""
   },
   "public/images/bridal-updo.jpg": {
@@ -3155,64 +2789,82 @@
     "ast_hash": "f0552ae12c02bf72528a8d16a2850ff6",
     "semantic_hash": ""
   },
-  "public/images/layered-highlights.jpg": {
-    "mtime": 1792740680.1208644,
-    "seen": 1792746555.416945,
-    "ast_hash": "9d192e5706b6c1b69cf90080da565f0f",
-    "semantic_hash": ""
-  },
-  "public/images/natural-texture.jpg": {
-    "mtime": 1792740683.8355496,
-    "seen": 1792746555.416946,
-    "ast_hash": "5cb1b2a91d7ed53f28a3d3566af32544",
-    "semantic_hash": ""
-  },
-  "public/images/oil-treatment.jpg": {
-    "mtime": 1792740678.8278003,
-    "seen": 1792746555.4169471,
-    "ast_hash": "0bc16a015331f149dc173187af6f0e7a",
-    "semantic_hash": ""
-  },
-  "public/images/razor-detail.jpg": {
-    "mtime": 1792740673.9424176,
-    "seen": 1792746555.4169486,
-    "ast_hash": "bfd61222d41327a48e1a883c4191af60",
-    "semantic_hash": ""
-  },
-  "public/images/salon-interior.jpg": {
-    "mtime": 1792740677.6825888,
-    "seen": 1792746555.4169497,
-    "ast_hash": "2a45a82a3150ef16565ff08cc8fde2f7",
-    "semantic_hash": ""
-  },
-  "public/images/scissor-hands.jpg": {
-    "mtime": 1792740682.5756059,
-    "seen": 1792746555.4169507,
-    "ast_hash": "87af27c0d06dc0d9920ad183b18310b1",
-    "semantic_hash": ""
-  },
-  "public/images/silver-texture-styling.jpg": {
-    "mtime": 1792740786.9100738,
-    "seen": 1792746555.4169521,
-    "ast_hash": "05e59b620fe55ae7c4516f09bed5606b",
-    "semantic_hash": ""
-  },
-  "public/images/sleek-ponytail.jpg": {
-    "mtime": 1792740666.8821917,
-    "seen": 1792746555.4169533,
-    "ast_hash": "e3f0b0a46b2807f10fb4e35f1eb22954",
-    "semantic_hash": ""
-  },
-  "public/images/wash-basins.jpg": {
-    "mtime": 1792740681.4476876,
-    "seen": 1792746555.4169545,
-    "ast_hash": "6b75c88fc29013b71870d06507f02b90",
-    "semantic_hash": ""
-  },
   ".cursor/skills-lock.json": {
     "mtime": 1792753750.3068855,
     "seen": 1792755008.7783954,
     "ast_hash": "0cce5d5b2992bec5d9131c2637461056",
+    "semantic_hash": ""
+  },
+  "public/images/hero-salon-1.jpg": {
+    "mtime": 1792994665.5413315,
+    "seen": 1792995441.136493,
+    "ast_hash": "a5c608cc9d7dd78884e6ad628413ef65",
+    "semantic_hash": ""
+  },
+  "public/images/hero-salon-2.jpg": {
+    "mtime": 1792994665.9209144,
+    "seen": 1792995441.1364956,
+    "ast_hash": "d9087e0af3f18c026528815869ec2463",
+    "semantic_hash": ""
+  },
+  "public/images/hero-salon-3.jpg": {
+    "mtime": 1792994666.1781027,
+    "seen": 1792995441.1364975,
+    "ast_hash": "d5e88d5d1e6fcad1e4578a8033d7d034",
+    "semantic_hash": ""
+  },
+  "public/images/service-blowout.jpg": {
+    "mtime": 1792994927.9682422,
+    "seen": 1792995441.136499,
+    "ast_hash": "91f3fd2524ff9f0741a22842db71df2a",
+    "semantic_hash": ""
+  },
+  "public/images/service-treatment.jpg": {
+    "mtime": 1792994925.973677,
+    "seen": 1792995441.1365006,
+    "ast_hash": "0bc16a015331f149dc173187af6f0e7a",
+    "semantic_hash": ""
+  },
+  "public/images/stylist-consultation.jpg": {
+    "mtime": 1792995955.4136496,
+    "seen": 1792996889.2239773,
+    "ast_hash": "de5788f3ce7a3b4a27a8db9b90d78325",
+    "semantic_hash": ""
+  },
+  "public/images/stylist-portrait-craft.jpg": {
+    "mtime": 1792995964.6295097,
+    "seen": 1792996889.223982,
+    "ast_hash": "3c3dc335e47a73a2d719f8e3c0ef7583",
+    "semantic_hash": ""
+  },
+  "public/images/stylist-chair-serenity.jpg": {
+    "mtime": 1792997126.9688451,
+    "seen": 1792997312.2802007,
+    "ast_hash": "1111cf84c67f85faa7ed45e13955ce65",
+    "semantic_hash": ""
+  },
+  "public/images/stylist-imre-vale.jpg": {
+    "mtime": 1792997026.7296188,
+    "seen": 1792997312.2803273,
+    "ast_hash": "a9599c55a2dfa8a74147428e04f89a18",
+    "semantic_hash": ""
+  },
+  "public/images/stylist-noa-hart.jpg": {
+    "mtime": 1792997015.616815,
+    "seen": 1792997312.2803297,
+    "ast_hash": "ff29093a4de8674bed68ce4f543ebc28",
+    "semantic_hash": ""
+  },
+  "public/images/stylist-sasha-okoro.jpg": {
+    "mtime": 1792997037.3121605,
+    "seen": 1792997312.2804554,
+    "ast_hash": "d3aa599a187d260a44129b52295a9dbf",
+    "semantic_hash": ""
+  },
+  "public/images/salon-candid-floor.jpg": {
+    "mtime": 1792997616.08117,
+    "seen": 1792997933.0456903,
+    "ast_hash": "0826f29fdf91b20db95b9131735b8488",
     "semantic_hash": ""
   }
 }

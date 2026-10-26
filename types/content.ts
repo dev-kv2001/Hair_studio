@@ -37,6 +37,9 @@ export type GalleryItem = {
   title: string;
   category: GalleryCategory;
   photo: Photo;
+  notes?: string;
+  technique?: string;
+  duration?: string;
 };
 
 export type Stylist = {
@@ -45,12 +48,6 @@ export type Stylist = {
   specialties: string[];
   bio: string;
   photo: Photo;
-};
-
-export type Testimonial = {
-  quote: string;
-  author: string;
-  service: string;
 };
 
 export type OpeningHours = {

@@ -10,7 +10,23 @@ const MENU_ID = "mobile-menu";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [current, setCurrent] = useState<string>(navLinks[0].href);
   const toggleRef = useRef<HTMLButtonElement>(null);
+
+  // Marks the section crossing the upper third of the screen as the current place in the navigation.
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.querySelector<HTMLElement>(link.href))
+      .filter((section): section is HTMLElement => section !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) if (entry.isIntersecting) setCurrent(`#${entry.target.id}`);
+      },
+      { rootMargin: "-30% 0px -65% 0px" },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -36,16 +52,24 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-ivory">
       <div className="frame flex h-[4.5rem] items-center justify-between gap-6">
-        <a href="#home" className="font-display text-[1.5rem] leading-none tracking-[-0.02em] whitespace-nowrap" onClick={() => setOpen(false)}>
+        <a
+          href="#home"
+          className="text-[1.5rem] leading-none font-medium tracking-[-0.03em] whitespace-nowrap"
+          onClick={() => setOpen(false)}
+        >
           <span translate="no">{site.name}</span>
           <span className="sr-only"> {site.descriptor}, home</span>
         </a>
 
         <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-8 text-small">
+          <ul className="flex items-center gap-7">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="underline-offset-[0.4em] decoration-transparent transition-colors hover:underline hover:decoration-charcoal">
+                <a
+                  href={link.href}
+                  aria-current={current === link.href ? "location" : undefined}
+                  className="relative inline-flex min-h-11 items-center text-small after:absolute after:inset-x-0 after:bottom-2 after:h-0.5 after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out-quint hover:after:origin-left hover:after:scale-x-100 aria-[current=location]:text-rose aria-[current=location]:after:origin-left aria-[current=location]:after:scale-x-100"
+                >
                   {link.label}
                 </a>
               </li>
@@ -55,7 +79,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <div className="hidden sm:block">
-            <BookButton className={buttonClass("solid")}>Book an appointment</BookButton>
+            <BookButton className={buttonClass("solid", "min-h-12")}>Book an appointment</BookButton>
           </div>
           <button
             ref={toggleRef}
@@ -75,23 +99,33 @@ export function SiteHeader() {
         id={MENU_ID}
         aria-label="Mobile"
         hidden={!open}
-        className="fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto overscroll-contain bg-ivory lg:hidden"
+        className="fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto overscroll-contain bg-blush transition-opacity duration-300 ease-out-quint starting:opacity-0 lg:hidden"
       >
-        <div className="frame flex min-h-full flex-col justify-between gap-12 pt-8 pb-10">
-          <ul className="flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="block py-2 font-display text-[2.5rem] leading-tight" onClick={() => setOpen(false)}>
+        <div className="frame flex min-h-full flex-col justify-between gap-12 pt-8 pb-[max(2.5rem,env(safe-area-inset-bottom))]">
+          <ul className="flex flex-col">
+            {navLinks.map((link, index) => (
+              <li
+                key={link.href}
+                className="transition-[opacity,translate] duration-500 ease-out-quint starting:translate-y-5 starting:opacity-0"
+                style={{ transitionDelay: `${60 + index * 50}ms` }}
+              >
+                <a
+                  href={link.href}
+                  aria-current={current === link.href ? "location" : undefined}
+                  className="flex items-baseline justify-between py-1.5 text-[2.75rem] leading-[1.05] font-medium tracking-[-0.03em] aria-[current=location]:text-rose"
+                  onClick={() => setOpen(false)}
+                >
                   {link.label}
+                  <Icon name="arrowRight" className="size-6 opacity-60" />
                 </a>
               </li>
             ))}
           </ul>
-          <div>
+          <div className="transition-opacity delay-300 duration-500 starting:opacity-0">
             <BookButton className={buttonClass("solid", "w-full")} onNavigate={() => setOpen(false)}>
               Book an appointment
             </BookButton>
-            <p className="mt-4 text-small text-taupe">
+            <p className="mt-4 text-small text-ink-soft">
               {site.address.street}, {site.address.city} · sample address
             </p>
           </div>

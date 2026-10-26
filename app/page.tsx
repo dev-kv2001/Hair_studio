@@ -7,15 +7,13 @@ import { Contact } from "@/components/sections/Contact";
 import { Gallery } from "@/components/sections/Gallery";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
-import { Stylists } from "@/components/sections/Stylists";
-import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
     <BookingProvider>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-charcoal focus:px-4 focus:py-3 focus:text-ivory"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-rose focus:px-4 focus:py-3 focus:text-paper"
       >
         Skip to content
       </a>
@@ -25,8 +23,6 @@ export default function Home() {
         <Services />
         <About />
         <Gallery />
-        <Stylists />
-        <Testimonials />
         <Appointment />
         <Contact />
       </main>
