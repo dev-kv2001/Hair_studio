@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: `${site.name} ${site.descriptor} (demo)`,
   description:
     "A demo landing page for a fictional hair studio: cuts, colour, treatments, bridal styling, hair spa and blowouts. All business details are sample content.",
+  // The browser picks by its colour-scheme preference: the charcoal mark on light tabs, the ivory mark on dark.
+  icons: {
+    icon: [
+      { url: "/images/copper-crown-icon-dark.svg", type: "image/svg+xml", media: "(prefers-color-scheme: light)" },
+      { url: "/images/copper-crown-icon-light.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
 };
 
 export const viewport: Viewport = {

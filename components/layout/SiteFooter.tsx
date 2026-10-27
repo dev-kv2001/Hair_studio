@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import { imageCredits } from "@/data/credits";
 import { navLinks, openingHours, site, socialLinks } from "@/data/site";
@@ -31,11 +32,15 @@ export function SiteFooter() {
         {/* The studio in one line, and the way back up. */}
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-lead leading-[1.15] font-medium tracking-[-0.02em]">
-              {site.name}
-              {/* En spaces: Erode's middle dot sits tight against the following letter with a normal space. */}
-              <span className="font-normal text-paper-soft">&ensp;·&ensp;{site.descriptor}</span>
-            </p>
+            {/* The light lockup carries the name and descriptor on the charcoal ground. */}
+            <Image
+              src="/images/copper-crown-logo-light.svg"
+              alt={`${site.name} ${site.descriptor}`}
+              width={164}
+              height={32}
+              unoptimized
+              className="block h-10 w-auto"
+            />
             <p className="mt-3 max-w-[42ch] text-paper-soft">
               A quiet studio for unhurried precision cutting, bespoke balayage, and natural textural care.
             </p>

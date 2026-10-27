@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { BookButton } from "@/components/booking/BookButton";
 import { buttonClass } from "@/components/ui/button";
@@ -54,11 +55,14 @@ export function SiteHeader() {
       <div className="frame flex h-[4.5rem] items-center justify-between gap-6">
         <a
           href="#home"
-          className="text-[1.5rem] leading-none font-medium tracking-[-0.03em] whitespace-nowrap"
+          className="shrink-0"
           onClick={() => setOpen(false)}
         >
-          <span translate="no">{site.name}</span>
-          <span className="sr-only"> {site.descriptor}, home</span>
+          {/* The compact lockup (164 x 32), shown at its native size; the link's name stays in text. */}
+          <Image src="/images/copper-crown-logo-dark.svg" alt="" width={164} height={32} unoptimized preload className="block h-8 w-auto" />
+          <span className="sr-only">
+            {site.name} {site.descriptor}, home
+          </span>
         </a>
 
         <nav aria-label="Main" className="hidden lg:block">
