@@ -75,6 +75,7 @@ export function Lightbox({ items, index, onIndexChange, onClose }: LightboxProps
       ref={dialogRef}
       aria-label={`Photo viewer: ${item.title}`}
       onClose={onClose}
+      data-lenis-prevent
       onKeyDown={(event) => {
         if (event.key === "ArrowRight") step(1);
         if (event.key === "ArrowLeft") step(-1);

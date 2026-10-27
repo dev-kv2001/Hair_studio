@@ -79,7 +79,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <div className="hidden sm:block">
-            <BookButton className={buttonClass("solid", "min-h-12")}>Book an appointment</BookButton>
+            <BookButton className={buttonClass("copper", "min-h-12")}>Book an appointment</BookButton>
           </div>
           <button
             ref={toggleRef}
@@ -99,6 +99,7 @@ export function SiteHeader() {
         id={MENU_ID}
         aria-label="Mobile"
         hidden={!open}
+        data-lenis-prevent
         className="fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto overscroll-contain bg-blush transition-opacity duration-300 ease-out-quint starting:opacity-0 lg:hidden"
       >
         <div className="frame flex min-h-full flex-col justify-between gap-12 pt-8 pb-[max(2.5rem,env(safe-area-inset-bottom))]">
@@ -122,7 +123,7 @@ export function SiteHeader() {
             ))}
           </ul>
           <div className="transition-opacity delay-300 duration-500 starting:opacity-0">
-            <BookButton className={buttonClass("solid", "w-full")} onNavigate={() => setOpen(false)}>
+            <BookButton className={buttonClass("copper", "w-full")} onNavigate={() => setOpen(false)}>
               Book an appointment
             </BookButton>
             <p className="mt-4 text-small text-ink-soft">

@@ -29,7 +29,7 @@ function subscribeToMotionPreference(onChange: () => void) {
 
 /**
  * The hero's living background: the photographs crossfade edge to edge, each on a slow zoom and drift,
- * under a warm ash wash. It stays paused under reduced motion; the progress lines jump straight to a slide. The hero's own content is passed in as children.
+ * under a warm ash wash. It stays paused under reduced motion. The hero's own content is passed in as children.
  */
 export function HeroSlideshow({ slides, children }: { slides: Slide[]; children: React.ReactNode }) {
   const [index, setIndex] = useState(0);
@@ -93,42 +93,6 @@ export function HeroSlideshow({ slides, children }: { slides: Slide[]; children:
       </div>
 
       {children}
-
-      <div className="hero-fade absolute top-6 right-[clamp(1rem,4vw,4rem)] z-10 flex w-[min(19rem,calc(100%-2rem))] flex-col gap-1 text-small text-paper sm:top-8">
-        <div className="flex min-h-11 items-center justify-between gap-4">
-          <span>
-            <span className="sr-only">Showing: </span>
-            <span key={slides[index].caption} className="photo-in inline-block">
-              {slides[index].caption}
-            </span>
-          </span>
-        </div>
-        {/* One line per photograph: the current one fills over its hold time, and each jumps to its slide. */}
-        <div className={`flex gap-1.5 ${single ? "hidden" : ""}`} role="group" aria-label="Choose a slide">
-          {slides.map((slide, slideIndex) => (
-            <button
-              key={slide.caption}
-              type="button"
-              onClick={() => setIndex(slideIndex)}
-              aria-current={slideIndex === index ? "true" : undefined}
-              className="group/dot flex min-h-11 flex-1 items-center"
-            >
-              <span className="sr-only">
-                Show slide {slideIndex + 1}: {slide.caption}
-              </span>
-              <span className="relative block h-0.5 w-full overflow-clip bg-paper/30 transition-[height] duration-200 group-hover/dot:h-1 group-focus-visible/dot:h-1">
-                <span
-                  key={slideIndex === index ? `${slide.caption}-${index}` : slide.caption}
-                  className={`absolute inset-0 origin-left bg-paper ${
-                    slideIndex < index ? "scale-x-100" : slideIndex === index ? "hero-progress scale-x-100" : "scale-x-0"
-                  } ${paused ? "[animation-play-state:paused]" : ""}`}
-                  style={{ "--hold": `${HOLD_MS}ms` } as React.CSSProperties}
-                />
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
     </>
   );
 }

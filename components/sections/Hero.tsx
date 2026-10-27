@@ -44,22 +44,30 @@ export function Hero() {
       className="relative isolate flex min-h-[calc(100svh-4.5rem)] flex-col overflow-clip bg-ash text-paper"
     >
       <HeroSlideshow slides={slides}>
-        {/* The headline block centres in the space left above the monument; the top padding clears the slide controls. */}
-        <div className="frame flex flex-1 flex-col justify-end pt-36 pb-[clamp(1.5rem,5svh,3.5rem)]">
-          <div className="my-auto grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-x-8">
-            <h1 id="hero-title" className="text-[clamp(2.75rem,1.2rem+5.2vw,6.25rem)] leading-[0.95] tracking-[-0.035em] lg:col-span-7">
-              <span className="mask-line">
-                <span className="load-line">Hair, cut to</span>
-              </span>
-              <span className="mask-line">
-                <span className="load-line" style={line(1)}>
-                  your character.
+        {/* The headline block centres in the space left above the monument, with matching padding above and below. */}
+        <div className="frame flex flex-1 flex-col justify-end py-[clamp(1.5rem,5svh,3.5rem)]">
+          <div className="my-auto grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-8">
+            <div className="lg:col-span-7">
+              {/* A short copper-ruled eyebrow places the studio before the headline lands. */}
+              <p className="load-rise mb-6 flex items-center gap-3 text-small text-paper/80" style={delay(240)}>
+                <span aria-hidden="true" className="h-px w-10 bg-rose" />
+                {site.descriptor}
+              </p>
+              <h1 id="hero-title" className="text-[clamp(2.75rem,1.2rem+5.2vw,6.25rem)] leading-[0.95] tracking-[-0.035em]">
+                <span className="mask-line">
+                  <span className="load-line">Hair, cut to</span>
                 </span>
-              </span>
-            </h1>
+                <span className="mask-line">
+                  <span className="load-line" style={line(1)}>
+                    your character.
+                  </span>
+                </span>
+              </h1>
+            </div>
 
-            <div className="lg:col-span-5 lg:col-start-8 lg:pb-3">
-              <p className="load-rise max-w-[34ch] text-lead leading-[1.3]" style={delay(480)}>
+            {/* A hairline on wide screens ties the supporting copy to the headline as one composition. */}
+            <div className="lg:col-span-5 lg:col-start-8 lg:border-l lg:border-paper/20 lg:py-2 lg:pl-10">
+              <p className="load-rise max-w-[34ch] text-lead leading-[1.3] text-balance" style={delay(480)}>
                 {site.name} is a hair studio for cuts, colour, treatments and occasion styling.
               </p>
               <div className="load-rise mt-7 flex flex-wrap gap-3" style={delay(580)}>
@@ -71,7 +79,7 @@ export function Hero() {
                   Explore services
                 </a>
               </div>
-              <p className="load-rise mt-6 max-w-[40ch] text-small text-paper-soft" style={delay(680)}>
+              <p className="load-rise mt-6 max-w-[40ch] text-small text-paper/65" style={delay(680)}>
                 {site.name} is a fictional studio. Prices, people and contact details on this page are samples.
               </p>
             </div>

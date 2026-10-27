@@ -214,7 +214,7 @@ export function BookingForm({ variant = "dark" }: BookingFormProps = {}) {
       <div className="sm:col-span-2">
         <button
           type="submit"
-          className={buttonClass(variant === "light" ? "solid" : "light", "w-full sm:w-auto")}
+          className={buttonClass(variant === "light" ? "copper" : "light", "w-full sm:w-auto")}
         >
           Send demo request
         </button>

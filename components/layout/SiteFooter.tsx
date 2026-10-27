@@ -119,7 +119,7 @@ export function SiteFooter() {
             {site.name}
           </p>
 
-          <p className="mt-10 text-small text-paper-soft">
+          <p className="mt-10 text-center text-small text-paper-soft sm:whitespace-nowrap">
             © {currentYear} {site.name} {site.descriptor}. Fictional studio craft demonstration.
           </p>
         </div>

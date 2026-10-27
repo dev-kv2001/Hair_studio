@@ -1,4 +1,4 @@
-type ButtonVariant = "solid" | "outline" | "light" | "ghost";
+type ButtonVariant = "solid" | "copper" | "outline" | "light" | "ghost";
 
 const base =
   "group/button inline-flex min-h-13 items-center justify-center gap-3 px-7 text-small font-medium tracking-[0.01em] transition-[background-color,color,box-shadow,transform] duration-200 ease-out-quint active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60";
@@ -6,6 +6,8 @@ const base =
 const variants: Record<ButtonVariant, string> = {
   // Copper is the page's one accent: it marks the action and nothing decorative.
   solid: "bg-rose text-ink hover:bg-rose-deep hover:text-paper",
+  // The same copper with a warm ivory label in every state; the focus ring stays ink so it shows on ivory.
+  copper: "bg-rose text-paper hover:bg-rose-deep focus-visible:outline-ink",
   outline: "bg-transparent text-ink ring-2 ring-inset ring-ink hover:bg-ink hover:text-paper",
   light: "bg-paper text-ink hover:bg-blush",
   // For a second action set on a photograph.

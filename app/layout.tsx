@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { site } from "@/data/site";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +24,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
         <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" />
       </head>
-      <body className="min-h-full bg-ivory text-ink">{children}</body>
+      <body className="min-h-full bg-ivory text-ink">
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }
